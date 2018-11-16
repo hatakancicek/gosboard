@@ -1,41 +1,84 @@
 import React, { Component } from 'react';
 import { ForceGraph2D } from 'react-force-graph';
-import { shapes } from './Costants';
+import Node from './Node';
 
 const nodes = [{
-  id: "GOS",
-  name: "Gamegos Backend Architecture",
-  value: 2,
-  shape: shapes.CIRCLE,
+  id: "Gamegos Backend Architecture",
+  value: .5,
   group: "GOS",
   expendable: true,
   inner: {
     nodes: [{
-      name: "Kubernetes Pods",
-      shape: shapes.CIRCLE,
+      id: "Kubernetes Pods",
       group: "K8",
+      inner: {
+        nodes: [{
+            id: "All Services",
+            group: "ALL",
+          }, {
+            id: "API Gateway",
+            group: "GW",
+          },
+        ],
+      }
     }, {
-      name: "Load Balancer",
-      shape: shapes.CIRCLE,
-      group: "ELB",
+      id: "Load Balancer",
+      group: "LB",
     }, {
-      name: "Version Control and Continuous Integration",
-      shape: shapes.CIRCLE,
+      id: "Version Control and Continuous Integration",
       group: "GIT",
     }, {
-      name: "Non-Flux Games",
-      shape: shapes.CIRCLE,
+      id: "Non-Flux Games",
       group: "NFG",
+    }, {
+      id: "Core Databases",
+      group: "CD",
+    }, {
+      id: "Analysis System",
+      group: "AS",
+    }, {
+      id: "System Logs",
+      group: "SL",
     }],
     links: [{
-      source: 1,
-      target: 0,
-      color: '#FAFAFA',
-      particles: 2,
-      arrowLength: 2,
-      width: 1,
-      curvature: .5
-    }]
+      source: "Load Balancer",
+      target: "Kubernetes Pods",
+    }, {
+      source: "Version Control and Continuous Integration",
+      target: "Kubernetes Pods",
+    }, {
+      target: "Kubernetes Pods",
+      source: "Core Databases",
+    }, {
+      target: "Core Databases",
+      source: "Kubernetes Pods",
+    }, {
+      target: "System Logs",
+      source: "Kubernetes Pods",
+    }, {
+      target: "Non-Flux Games",
+      source: "System Logs",
+    }, {
+      target: "Non-Flux Games",
+      source: "System Logs",
+      curvature: .5,
+    }, {
+      target: "Analysis System",
+      source: "Kubernetes Pods",
+    }, {
+      source: "Kubernetes Pods",
+      target: "All Services",
+    }, {
+      source: "Kubernetes Pods",
+      target: "API Gateway",
+    }, {
+      source: "Kubernetes Pods",
+      target: "All Services",
+      curvature: .5,
+    }, {
+      source: "API Gateway",
+      target: "All Services",
+    },]
   },
 }];
 
@@ -48,6 +91,7 @@ class App extends Component {
   };
 
   componentWillMount() {
+    this.Node = Node(this);
     this.setState({
       nodes: [new this.Node(nodes[0])]
     });
@@ -57,56 +101,6 @@ class App extends Component {
     this.refs.graph.zoom([15]);
   }
 
-  Node = ((app) => (node, parent) => ({
-    ...node,
-    parent: parent || [],
-    expended: false,
-    inner: node.inner || { nodes: [], links: [] },
-    expendable: node.inner 
-      && node.inner.nodes
-      && node.inner.nodes.length,
-    toggle() {
-      const { Node } = app;
-      const { expended, inner, id, expendable } = this;
-      if(!expendable) return;
-      const { nodes, links } = app.state;
-      this.expended = !expended;
-      this.opacity = expended ? 0.1 : 1;
-      if(expended) {
-        let newNodes = nodes.filter(node => !node.parent.includes(id));
-        let newLinks = links.filter(link => !link.parent.includes(id));
-        app.setState({ links: newLinks, nodes: newNodes });
-      } else {
-        let newNodes = [...nodes, ...inner.nodes
-          .map((kid, index) => new Node({ 
-            ...kid, 
-            value: this.value * .7,
-            id: id + "_" +  index,
-          }, [ ...this.parent, id ]))];
-        let newLinks = [...links, ...inner.links
-          .map(kid => ({
-            ...kid,
-            source: id + "_" + kid.source,
-            target: id + "_" + kid.target,
-            parent: [ ...this.parent, id ],
-          })), ...inner.nodes
-          .map((_, index) => ({
-            source: id,
-            target: id + "_" + index,
-            parent: [ ...this.parent, id ],
-            color: '#90A4AE',
-            arrowLength: 0,
-            particles: 0,
-            width: .3,
-          }))];
-
-        console.log({ links: newLinks, nodes: newNodes })
-
-        app.setState({ links: newLinks, nodes: newNodes });
-      }
-    }
-  }))(this);
-  
   render() {
     return (
       <div className="App">
@@ -114,7 +108,7 @@ class App extends Component {
           ref="graph"
           nodeVal="value"
           dagLevelDistance={900}
-          nodeLabel="name"
+          nodeLabel="id"
           graphData={this.state}
           onNodeClick={nodeToggle}
           nodeAutoColorBy="group"
