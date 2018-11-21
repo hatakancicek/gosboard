@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ForceGraph2D } from 'react-force-graph';
 import Node from './Node';
+import nodes from './Nodes';
 
 const styles = {
   informationWrapper: {
@@ -28,86 +29,6 @@ const styles = {
   }
 }
 
-console.log(window);
-
-const nodes = [{
-  id: "Gamegos Backend Architecture",
-  description: "Gamegos Backend Architescture is where the magic happens.",
-  value: .5,
-  group: "GOS",
-  expendable: true,
-  inner: {
-    nodes: [{
-      id: "Kubernetes Pods",
-      group: "K8",
-      inner: {
-        nodes: [{
-            id: "All Services",
-            group: "ALL",
-          }, {
-            id: "API Gateway",
-            group: "GW",
-          },
-        ],
-      }
-    }, {
-      id: "Load Balancer",
-      group: "LB",
-    }, {
-      id: "Version Control and Continuous Integration",
-      group: "GIT",
-    }, {
-      id: "Non-Flux Games",
-      group: "NFG",
-    }, {
-      id: "Core Databases",
-      group: "CD",
-    }, {
-      id: "Analysis System",
-      group: "AS",
-    }, {
-      id: "System Logs",
-      group: "SL",
-    }],
-    links: [{
-      source: "Load Balancer",
-      target: "Kubernetes Pods",
-    }, {
-      source: "Version Control and Continuous Integration",
-      target: "All Services",
-    }, {
-      target: "Kubernetes Pods",
-      source: "Core Databases",
-    }, {
-      target: "Core Databases",
-      source: "Kubernetes Pods",
-    }, {
-      target: "System Logs",
-      source: "All Services",
-    }, {
-      target: "System Logs",
-      source: "API Gateway",
-    }, {
-      target: "Non-Flux Games",
-      source: "API Gateway",
-    }, {
-      target: "Non-Flux Games",
-      source: "System Logs",
-      curvature: .5,
-    }, {
-      source: "Kubernetes Pods",
-      target: "API Gateway",
-    }, {
-      source: "Kubernetes Pods",
-      target: "All Services",
-      curvature: .5,
-    }, {
-      source: "API Gateway",
-      target: "All Services",
-    },]
-  },
-}];
-
 const nodeToggle = node => node.toggle();
 
 class App extends Component {
@@ -128,7 +49,12 @@ class App extends Component {
   }
 
   render() {
-    const { node } = this.state;
+    let { node, links, nodes, showConnections } = this.state;
+
+    if(!showConnections)
+      links = links.filter(({ type }) =>
+      type === "child"
+    );
 
     return (
       <div className="App">
@@ -137,7 +63,10 @@ class App extends Component {
           onNodeHover={_ => {}}
           nodeVal="value"
           dagLevelDistance={900}
-          graphData={this.state}
+          graphData={{
+            nodes,
+            links,
+          }}
           onNodeClick={nodeToggle}
           nodeAutoColorBy="group"
           backgroundColor="#263238"
@@ -154,6 +83,28 @@ class App extends Component {
             <p style={styles.paragraph} >{node.description}</p>
           </div>
         }
+        <div
+          style={{
+            position: 'absolute',
+            backgroundColor: showConnections ? '#2E7D32' : '#455A64',
+            padding: 12,
+            top: 20,
+            left: 20,
+            borderRadius: 4,
+          }}
+          onClick={_ => this.setState({ 
+            showConnections: !showConnections,
+           })}
+        >
+          <h3
+            style={{
+              fontWeight: 'bold',
+              color: '#FAFAFA',
+            }}
+          >
+            Toggle Connections
+          </h3>
+        </div>
       </div>
     );
   };
