@@ -2,8 +2,37 @@ import React, { Component } from 'react';
 import { ForceGraph2D } from 'react-force-graph';
 import Node from './Node';
 
+const styles = {
+  informationWrapper: {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    padding: 12,
+    position: 'absolute',
+    width: '20%',
+    backgroundColor: 'rgba(0, 0, 0, .3)',
+    maxWidth: 400,
+    minWidth: 200,
+  },
+  header: {
+    color: '#FAFAFA',
+    display: 'block',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  paragraph: {
+    padding: 12,
+    marginTop: 10,
+    color: '#FAFAFA',
+    textAlign: 'center',
+  }
+}
+
+console.log(window);
+
 const nodes = [{
   id: "Gamegos Backend Architecture",
+  description: "Gamegos Backend Architescture is where the magic happens.",
   value: .5,
   group: "GOS",
   expendable: true,
@@ -45,7 +74,7 @@ const nodes = [{
       target: "Kubernetes Pods",
     }, {
       source: "Version Control and Continuous Integration",
-      target: "Kubernetes Pods",
+      target: "All Services",
     }, {
       target: "Kubernetes Pods",
       source: "Core Databases",
@@ -54,20 +83,17 @@ const nodes = [{
       source: "Kubernetes Pods",
     }, {
       target: "System Logs",
-      source: "Kubernetes Pods",
+      source: "All Services",
+    }, {
+      target: "System Logs",
+      source: "API Gateway",
     }, {
       target: "Non-Flux Games",
-      source: "System Logs",
+      source: "API Gateway",
     }, {
       target: "Non-Flux Games",
       source: "System Logs",
       curvature: .5,
-    }, {
-      target: "Analysis System",
-      source: "Kubernetes Pods",
-    }, {
-      source: "Kubernetes Pods",
-      target: "All Services",
     }, {
       source: "Kubernetes Pods",
       target: "API Gateway",
@@ -102,13 +128,15 @@ class App extends Component {
   }
 
   render() {
+    const { node } = this.state;
+
     return (
       <div className="App">
         <ForceGraph2D
           ref="graph"
+          onNodeHover={_ => {}}
           nodeVal="value"
           dagLevelDistance={900}
-          nodeLabel="id"
           graphData={this.state}
           onNodeClick={nodeToggle}
           nodeAutoColorBy="group"
@@ -117,8 +145,15 @@ class App extends Component {
           linkCurvature="curvature"
           linkWidth="width"
           linkDirectionalParticles="particles"
-          nodeCanvasObject={({shape, ...node}, ctx) => shape(node, ctx)}
+          nodeCanvasObject={({shape, ...node}, ctx) => 
+            shape(node, ctx)}
         />
+        {node &&
+          <div style={styles.informationWrapper} >
+            <h3 style={styles.header} >{node.id}</h3>
+            <p style={styles.paragraph} >{node.description}</p>
+          </div>
+        }
       </div>
     );
   };

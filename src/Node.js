@@ -85,6 +85,13 @@ function toggle() {
     const { expended, inner, id, expendable, component } = this;
     const { Node } = component;
 
+    component.setState({
+      node: {
+        id: this.id,
+        description: this.description,
+      },
+    });
+
     //If the node is not expendable simply do nothing.
     if(!expendable) return;
     const { nodes, links } = component.state;
