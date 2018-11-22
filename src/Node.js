@@ -1,9 +1,12 @@
-import { links, shapes } from './Costants';
+import { links, shapes } from './Constants';
 
+// Deault values for empty attributes of nodes.
 const DEFAULT_SHAPE = shapes.CIRCLE,
       DEFAULT_INNER = { nodes: [], links: [] },
       DEFAULT_PARENT = [];
 
+// Default attributes of auto generated child 
+// and connection links.
 const { child, connection } = links;
 
 // Checks if the node has any links or nodes. A node should 
@@ -15,6 +18,8 @@ const secureInner = inner => inner || DEFAULT_INNER;
 const secureParent = parent => parent || DEFAULT_PARENT;
 const secureShape = shape => shape || DEFAULT_SHAPE;
 
+
+// Traverses nodes and finds the path from root to the node.
 const pathToNode = ({ id, inner }, target, currentPath) => {
   const targetPath = [ ...currentPath, id ];
   if(target === id) return targetPath;
@@ -26,11 +31,12 @@ const pathToNode = ({ id, inner }, target, currentPath) => {
     const temp = nodes[i];
     const path = pathToNode(temp, target, targetPath);
     if(path.length > targetPath.length) return path;
-  }
+  };
 
   return currentPath;
-}
+};
 
+// Traverses node's parents and returns the closest one which is rendered.
 const getRenderedParentOfNode = (nodes, target) => {
   let path = pathToNode(nodes[0], target, []).reverse();
 
@@ -42,18 +48,25 @@ const getRenderedParentOfNode = (nodes, target) => {
         return currentNodeID;
       };
     };
-  }
+  };
 
   return target;
-}
+};
 
+// Generates a link between the closest parent rendered 
+// of source and target nodes.
 const generateConnection = (kid, nodes) => {
   const { target, source } = kid;
   
   let renderedTarget, renderedSource;
 
+  // Traverse nodes.
   for(let i = 0; i < nodes.length; i++) {
     const { id } = nodes[i];
+
+
+    // If target or source is rendered,
+    // select it as links target or soruce.
 
     if( id === target ) {
       renderedTarget = id;
@@ -66,12 +79,22 @@ const generateConnection = (kid, nodes) => {
     };
   };
 
+
+  // If not, choose the closest parent rendered.
   return {
     ...connection,
     ...kid,
     target: renderedTarget || getRenderedParentOfNode(nodes, target),
     source: renderedSource || getRenderedParentOfNode(nodes, source)
   };
+};
+
+
+// Mesagge selection maanager about hover.
+function hover() {
+  const { id, manager } = this;
+
+  manager.highlightNode(id);
 };
 
 // This function adds or removes the links and nodes 
@@ -81,15 +104,24 @@ const generateConnection = (kid, nodes) => {
 // 'node' refers to the parent, to whom this method 
 // belongs to which is 'this'. Use arrow functions inside
 // toggle method for not affecting the value of 'this'.
-function toggle() {
-    const { expended, inner, id, expendable, component } = this;
+function _toggle() {
+    const { expended, inner, id, expendable, 
+      component, description, manager } = this;
     const { Node } = component;
 
-    component.setState({
-      node: {
-        id: this.id,
-        description: this.description,
-      },
+    if(manager.state.selectionMode) 
+      return manager.setState({
+        selectionMode: false,
+        node: {
+          id,
+          description,
+        },
+        highlightNode: id,
+      });
+
+    manager.setState({
+      highlightNode: undefined,
+      selectionMode: false,
     });
 
     //If the node is not expendable simply do nothing.
@@ -98,6 +130,7 @@ function toggle() {
 
     // Change expended state of node
     this.expended = !expended;
+    this.opacity = .5;
 
     let newNodes, newLinks;
     
@@ -113,7 +146,8 @@ function toggle() {
         }, newNodes)), 
         
         // Then add a link between kid and node.
-        ...links.filter(link => link.type === "child" && !link.parent.includes(id))
+        ...links.filter(link => 
+          link.type === "child" && !link.parent.includes(id))
       ];
     } else {
 
@@ -127,7 +161,7 @@ function toggle() {
       newNodes = [...nodes, ...inner.nodes
         .map(kid => new Node({ 
           ...kid, 
-          value: this.value * .7,
+          value: this.value,
           parent: [ ...this.parent, id ],
         }))];
 
@@ -135,7 +169,9 @@ function toggle() {
       newLinks = [ ...nodes[0].inner.links.map(kid => generateConnection({
           ...kid,
         }, newNodes)), 
-        ...links.filter(link => link.type === "child" && !link.parent.includes(id)).map(link => ({ ...link, source: link.source.id, target: link.target.id })),
+        ...links.filter(link => 
+          link.type === "child" && !link.parent.includes(id)).map(link => 
+            ({ ...link, source: link.source.id, target: link.target.id })),
         // Then add a link between kid and node.
         ...inner.nodes.map(kid => ({
           ...child,
@@ -160,6 +196,14 @@ export default (component) => (node) => ({
     inner: secureInner(node.inner),
     shape: secureShape(node.shape),
     parent: secureParent(node.parent),
+    manager: component.refs.manager,
+    toggle: _toggle,
     component,
-    toggle,
+    hover,
 });
+
+
+
+export const toggle = node => node.toggle();
+export const draw = ({shape, ...node}, ctx) => 
+  shape(node, ctx)
