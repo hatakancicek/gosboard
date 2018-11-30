@@ -51,14 +51,15 @@ export default {
     CIRCLE: (node, ctx) => { 
         let { x,y,value,expended, 
             color, expendable, id, 
-            opacity, manager, 
+            opacity, manager, parent, 
+            name,
         } = node;
         value = value * Config.nodeMagnify;
 
         // If manager doesn't have a highlight
         // node, the opacity of the node is
         // its original opacity.
-        if(manager.state.highlightNode) {
+        if(manager.state.highlightNode && manager.state.highlightNodes) {
 
             // If node is the highlighted node,
             // its opacity is set to 1.
@@ -71,6 +72,11 @@ export default {
             // it is half shaded.
             else if(manager.state.highlightNodes.includes(id))
                 opacity = Config.halfShadeOpacity;
+
+            // Else if node is connected to the highlighted node,
+            // it is half shaded.
+            else if(parent && parent.includes(manager.state.highlightNode))
+                opacity = Config.halfShadeOpacity * .5;
 
             // Else the node is made shady.
             else 
@@ -121,6 +127,6 @@ export default {
 
         // If the node is not shaded, draw its name on canvas.
         if(opacity !== Config.fullShadeOpacity)
-            drawTextBG(ctx, id, x, y - value * .35, );
+            drawTextBG(ctx, name || id, x, y - value * .35, );
     },
 };

@@ -1,4 +1,4 @@
-import nodes from './Nodes';
+import nodes from './Services';
 import Config from './Config';
 import React, { Component } from 'react';
 import Node, { toggle, draw } from './Node';
@@ -17,6 +17,14 @@ const styles = {
     position: 'absolute',
     padding: 12,
     top: 20,
+    left: 20,
+    width:160,
+    borderRadius: 4,
+  },
+  sourceButton: {
+    position: 'absolute',
+    padding: 12,
+    top: 145,
     left: 20,
     width:160,
     borderRadius: 4,
@@ -83,6 +91,9 @@ class App extends Component {
     if(link.type === "child")
       link.width = .3
 
+    else if(link.type === "source") 
+      link.width = .7;
+
     else 
       link.width = 1;
 
@@ -118,6 +129,9 @@ class App extends Component {
       return color;  
     };
 
+    if(link.type === "child")
+      return "#455A64";
+
     // Return the color of background.
     return graphBackground;
   };
@@ -134,14 +148,29 @@ class App extends Component {
     });
   };
 
+  toggleSources = _ => {
+    const { showSources } = this.state;
+    this.refs.manager.clearSelection();
+
+    this.setState({
+      showSources: !showSources,
+    });
+  };
+
   render() {
-    const { linkColor, nodeHover, toggleConnections } = this;
-    let { links, nodes, showConnections } = this.state;
+    const { linkColor, nodeHover, toggleConnections, toggleSources } = this;
+    let { links, nodes, showConnections, showSources } = this.state;
 
     // Remove connections if connection toggle is off.
     if(!showConnections)
       links = links.filter(({ type }) =>
         type === "child");
+
+    // Remove sources if connection toggle is off.
+    if(!showSources){
+      links = links.filter(({ type }) =>
+        type !== "source");
+      }
 
     return (
       <div 
@@ -178,6 +207,21 @@ class App extends Component {
             style={styles.buttonText}
           >
             Toggle Connections
+          </h3>
+        </div>
+        <div
+          style={{
+            ...styles.sourceButton,
+            backgroundColor: showSources 
+              ? '#2E7D32' 
+              : '#455A64',
+          }}
+          onClick={toggleSources}
+        >
+          <h3
+            style={styles.buttonText}
+          >
+            Toggle Sources
           </h3>
         </div>
         <SelectionManager 

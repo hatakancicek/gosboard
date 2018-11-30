@@ -1,0 +1,3126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl -->
+<html class="" lang="en"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="confd/templates/config.yml.tmpl · master · mamut / gateway" property="og:title">
+<meta content="GitLab Community Edition" property="og:description">
+<meta content="https://git.fixb.com/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="confd/templates/config.yml.tmpl · master · mamut / gateway" property="twitter:title">
+<meta content="GitLab Community Edition" property="twitter:description">
+<meta content="https://git.fixb.com/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="twitter:image">
+
+<title>confd/templates/config.yml.tmpl · master · mamut / gateway · GitLab</title>
+<meta content="GitLab Community Edition" name="description">
+<link rel="shortcut icon" type="image/png" href="https://git.fixb.com/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" id="favicon" data-original-href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png">
+<link rel="stylesheet" media="all" href="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/application-e9df191d9f0417750d8d3e3d5c894a9e2166a68225e23d62b7fff88e7930bf43.css">
+<link rel="stylesheet" media="print" href="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/print-c8ff536271f8974b8a9a5f75c0ca25d2b8c1dceb4cff3c01d1603862a0bdcbfc.css">
+
+
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://git.fixb.com/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=300;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.gitlab_url="https://git.fixb.com";gon.revision="32cb452";gon.gitlab_logo="/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png";gon.sprite_icons="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg";gon.sprite_file_icons="/assets/file_icons-7262fc6897e02f1ceaf8de43dc33afa5e4f9a2067f4f68ef77dcc87946575e9e.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-289eccffb1183c188b630297431be837765d9ff4aed6130cf738586fb307c170.css";gon.test_env=false;gon.suggested_label_colors=["#0033CC","#428BCA","#44AD8E","#A8D695","#5CB85C","#69D100","#004E00","#34495E","#7F8C8D","#A295D6","#5843AD","#8E44AD","#FFECDB","#AD4363","#D10069","#CC0033","#FF0000","#D9534F","#D1D100","#F0AD4E","#AD8D43"];gon.current_user_id=24;gon.current_username="atakan1";gon.current_user_fullname="atakan";gon.current_user_avatar_url="https://secure.gravatar.com/avatar/5c5f5d26833db326730560de9d908a68?s=80\u0026d=identicon";
+//]]>
+</script>
+
+
+<script src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/runtime.7fe6b451.bundle.js" defer="defer"></script>
+<script src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/main.54c777b6.chunk.js" defer="defer"></script>
+<script src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/commons_pages.projects_pages.projects.activity_pages.projects.artifacts.browse_pages.projects.artifa_1485fd35.1d5a6728.chunk.js" defer="defer"></script>
+<script src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/commons_pages.groups.milestones.edit_pages.groups.milestones.new_pages.projects.blame.show_pages.pro_e382f304.4661c8ac.chunk.js" defer="defer"></script>
+<script src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/pages.projects.blob.show.6e106491.chunk.js" defer="defer"></script>
+<script>
+  window.uploads_path = "/mamut/gateway/uploads";
+</script>
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="zbyXFPhdXjx1pqGk65nuAIJp22WQ7RIAUJc+XKav//IeUW/bGjh80vRpd8o65MtouRgvjjvsJ/0/bFg7izlyOQ==">
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-iphone-5a9cee0e8a51212e70b90c87c12f382c428870c0ff67d1eb034d884b78d2dae7.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-ipad-a6eec6aeb9da138e507593b464fdac213047e49d3093fc30e90d9a995df83ba3.png" sizes="76x76">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-iphone-retina-72e2aadf86513a56e050e7f0f2355deaa19cc17ed97bbe5147847f2748e5a3e3.png" sizes="120x120">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png" sizes="152x152">
+<link color="rgb(226, 67, 41)" href="https://git.fixb.com/assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-1196ec67452f618d39cdd85e2e3a542f76574c071051ae7effbfde01710eb17d.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+
+
+
+<script charset="utf-8" src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/emoji.f3ca93f6.chunk.js"></script></head>
+
+<body class="ui-indigo " data-find-file="/mamut/gateway/find_file/master" data-group="" data-page="projects:blob:show" data-project="gateway">
+
+
+<header class="navbar navbar-gitlab qa-navbar navbar-expand-sm">
+<a class="sr-only gl-accessibility" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#content-body" tabindex="1">Skip to content</a>
+<div class="container-fluid">
+<div class="header-content">
+<div class="title-container">
+<h1 class="title">
+<a title="Dashboard" id="logo" href="https://git.fixb.com/"><svg width="24" height="24" class="tanuki-logo" viewBox="0 0 36 36">
+  <path class="tanuki-shape tanuki-left-ear" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"></path>
+  <path class="tanuki-shape tanuki-right-ear" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"></path>
+  <path class="tanuki-shape tanuki-nose" fill="#e24329" d="M18,34.38 3,14 33,14 Z"></path>
+  <path class="tanuki-shape tanuki-left-eye" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"></path>
+  <path class="tanuki-shape tanuki-right-eye" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"></path>
+  <path class="tanuki-shape tanuki-left-cheek" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"></path>
+  <path class="tanuki-shape tanuki-right-cheek" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"></path>
+</svg>
+
+<span class="logo-text d-none d-sm-block">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 169"><path d="M315.26 2.97h-21.8l.1 162.5h88.3v-20.1h-66.5l-.1-142.4M465.89 136.95c-5.5 5.7-14.6 11.4-27 11.4-16.6 0-23.3-8.2-23.3-18.9 0-16.1 11.2-23.8 35-23.8 4.5 0 11.7.5 15.4 1.2v30.1h-.1m-22.6-98.5c-17.6 0-33.8 6.2-46.4 16.7l7.7 13.4c8.9-5.2 19.8-10.4 35.5-10.4 17.9 0 25.8 9.2 25.8 24.6v7.9c-3.5-.7-10.7-1.2-15.1-1.2-38.2 0-57.6 13.4-57.6 41.4 0 25.1 15.4 37.7 38.7 37.7 15.7 0 30.8-7.2 36-18.9l4 15.9h15.4v-83.2c-.1-26.3-11.5-43.9-44-43.9M557.63 149.1c-8.2 0-15.4-1-20.8-3.5V70.5c7.4-6.2 16.6-10.7 28.3-10.7 21.1 0 29.2 14.9 29.2 39 0 34.2-13.1 50.3-36.7 50.3m9.2-110.6c-19.5 0-30 13.3-30 13.3v-21l-.1-27.8h-21.3l.1 158.5c10.7 4.5 25.3 6.9 41.2 6.9 40.7 0 60.3-26 60.3-70.9-.1-35.5-18.2-59-50.2-59M77.9 20.6c19.3 0 31.8 6.4 39.9 12.9l9.4-16.3C114.5 6 97.3 0 78.9 0 32.5 0 0 28.3 0 85.4c0 59.8 35.1 83.1 75.2 83.1 20.1 0 37.2-4.7 48.4-9.4l-.5-63.9V75.1H63.6v20.1h38l.5 48.5c-5 2.5-13.6 4.5-25.3 4.5-32.2 0-53.8-20.3-53.8-63-.1-43.5 22.2-64.6 54.9-64.6M231.43 2.95h-21.3l.1 27.3v94.3c0 26.3 11.4 43.9 43.9 43.9 4.5 0 8.9-.4 13.1-1.2v-19.1c-3.1.5-6.4.7-9.9.7-17.9 0-25.8-9.2-25.8-24.6v-65h35.7v-17.8h-35.7l-.1-38.5M155.96 165.47h21.3v-124h-21.3v124M155.96 24.37h21.3V3.07h-21.3v21.3"></path></svg>
+
+</span>
+</a></h1>
+<ul class="list-unstyled navbar-sub-nav">
+<li id="nav-projects-dropdown" class="home dropdown header-projects qa-projects-dropdown"><button data-toggle="dropdown" type="button">
+Projects
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</button>
+<div class="dropdown-menu frequent-items-dropdown-menu">
+<div class="frequent-items-dropdown-container">
+<div class="frequent-items-dropdown-sidebar qa-projects-dropdown-sidebar">
+<ul>
+<li class=""><a class="qa-your-projects-link" href="https://git.fixb.com/dashboard/projects">Your projects
+</a></li><li class=""><a href="https://git.fixb.com/dashboard/projects/starred">Starred projects
+</a></li><li class=""><a href="https://git.fixb.com/explore">Explore projects
+</a></li></ul>
+</div>
+<div class="frequent-items-dropdown-content">
+<div><div class="search-input-container d-none d-sm-block"><input placeholder="Search your projects" type="search" class="form-control"> <i aria-hidden="true" class="search-icon fa fa-fw fa-search"></i></div> <!----> <div class="section-header">
+    Frequently visited
+  </div> <div class="frequent-items-list-container"><ul class="list-unstyled"><li class="section-empty">
+      Projects you visit often will appear here
+    </li></ul></div></div>
+</div>
+</div>
+
+</div>
+</li><li id="nav-groups-dropdown" class="home dropdown header-groups qa-groups-dropdown"><button data-toggle="dropdown" type="button">
+Groups
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</button>
+<div class="dropdown-menu frequent-items-dropdown-menu">
+<div class="frequent-items-dropdown-container">
+<div class="frequent-items-dropdown-sidebar qa-groups-dropdown-sidebar">
+<ul>
+<li class=""><a class="qa-your-groups-link" href="https://git.fixb.com/dashboard/groups">Your groups
+</a></li><li class=""><a href="https://git.fixb.com/explore/groups">Explore groups
+</a></li></ul>
+</div>
+<div class="frequent-items-dropdown-content">
+<div><div class="search-input-container d-none d-sm-block"><input placeholder="Search your groups" type="search" class="form-control"> <i aria-hidden="true" class="search-icon fa fa-fw fa-search"></i></div> <!----> <div class="section-header">
+    Frequently visited
+  </div> <div class="frequent-items-list-container"><ul class="list-unstyled"><li class="section-empty">
+      Groups you visit often will appear here
+    </li></ul></div></div>
+</div>
+</div>
+
+</div>
+</li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-activity" title="Activity" href="https://git.fixb.com/dashboard/activity">Activity
+</a></li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-milestones" title="Milestones" href="https://git.fixb.com/dashboard/milestones">Milestones
+</a></li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-snippets" title="Snippets" href="https://git.fixb.com/dashboard/snippets">Snippets
+</a></li><li class="header-more dropdown d-lg-none d-xl-none">
+<a data-toggle="dropdown" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#">
+More
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</a>
+<div class="dropdown-menu">
+<ul>
+<li class=""><a title="Activity" href="https://git.fixb.com/dashboard/activity">Activity
+</a></li><li class=""><a class="dashboard-shortcuts-milestones" title="Milestones" href="https://git.fixb.com/dashboard/milestones">Milestones
+</a></li><li class=""><a class="dashboard-shortcuts-snippets" title="Snippets" href="https://git.fixb.com/dashboard/snippets">Snippets
+</a></li></ul>
+</div>
+</li>
+<li class="hidden">
+<a title="Projects" class="dashboard-shortcuts-projects" href="https://git.fixb.com/dashboard/projects">Projects
+</a></li>
+<li class="line-separator d-none d-sm-block"></li>
+<li class=""><a title="Instance Statistics" aria-label="Instance Statistics" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/-/instance_statistics"><svg class="s18"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#chart"></use></svg>
+</a></li></ul>
+
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="header-new dropdown">
+<a class="header-new-dropdown-toggle has-tooltip qa-new-menu-toggle" title="New..." ref="tooltip" aria-label="New..." data-toggle="dropdown" data-placement="bottom" data-container="body" data-display="static" href="https://git.fixb.com/projects/new"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#plus-square"></use></svg>
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li class="dropdown-bold-header">
+This project
+</li>
+<li>
+<a href="https://git.fixb.com/mamut/gateway/issues/new">New issue</a>
+</li>
+<li>
+<a href="https://git.fixb.com/mamut/gateway/merge_requests/new">New merge request</a>
+</li>
+<li class="header-new-project-snippet">
+<a href="https://git.fixb.com/mamut/gateway/snippets/new">New snippet</a>
+</li>
+<li class="divider"></li>
+<li class="dropdown-bold-header">GitLab</li>
+<li>
+<a class="qa-global-new-project-link" href="https://git.fixb.com/projects/new">New project</a>
+</li>
+<li>
+<a href="https://git.fixb.com/groups/new">New group</a>
+</li>
+<li>
+<a href="https://git.fixb.com/snippets/new">New snippet</a>
+</li>
+</ul>
+</div>
+</li>
+
+<li class="nav-item d-none d-sm-none d-md-block m-auto">
+<div class="search search-form">
+<form class="form-inline" action="https://git.fixb.com/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><div class="search-input-container">
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search or jump to…" class="search-input dropdown-menu-toggle no-outline js-search-dashboard-options disabled" spellcheck="false" tabindex="1" autocomplete="off" data-issues-path="/dashboard/issues" data-mr-path="/dashboard/merge_requests" aria-label="Search or jump to…">
+<button class="hidden js-dropdown-search-toggle" data-toggle="dropdown" type="button"></button>
+<div class="dropdown-menu dropdown-select">
+<div class="dropdown-content"><ul>
+<li class="dropdown-menu-empty-item">
+<a>
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+<svg class="s16 search-icon"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#search"></use></svg>
+<svg class="s16 clear-icon js-clear-input"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#close"></use></svg>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id" class="js-search-group-options">
+<input type="hidden" name="project_id" id="search_project_id" value="309" class="js-search-project-options" data-project-path="gateway" data-name="gateway" data-issues-path="/mamut/gateway/issues" data-mr-path="/mamut/gateway/merge_requests" data-issues-disabled="false">
+<input type="hidden" name="search_code" id="search_code" value="true">
+<input type="hidden" name="repository_ref" id="repository_ref" value="master">
+
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete" data-autocomplete-project-id="309" data-autocomplete-project-ref="master"></div>
+</form></div>
+
+</li>
+<li class="nav-item d-inline-block d-sm-none d-md-none">
+<a title="Search" aria-label="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/search?project_id=309"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#search"></use></svg>
+</a></li>
+<li class="user-counter"><a title="Issues" class="dashboard-shortcuts-issues" aria-label="Issues" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/dashboard/issues?assignee_id=24"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#issues"></use></svg>
+<span class="badge badge-pill hidden issues-count">
+0
+</span>
+</a></li><li class="user-counter"><a title="Merge requests" class="dashboard-shortcuts-merge_requests" aria-label="Merge requests" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/dashboard/merge_requests?assignee_id=24"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#git-merge"></use></svg>
+<span class="badge badge-pill hidden merge-requests-count">
+0
+</span>
+</a></li><li class="user-counter"><a title="Todos" aria-label="Todos" class="shortcuts-todos" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/dashboard/todos"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#todo-done"></use></svg>
+<span class="badge badge-pill hidden todos-count">
+0
+</span>
+</a></li><li class="nav-item header-user dropdown">
+<a class="header-user-dropdown-toggle" data-toggle="dropdown" href="https://git.fixb.com/atakan1"><img width="23" height="23" class="header-user-avatar qa-user-avatar js-lazy-loaded" src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/5c5f5d26833db326730560de9d908a68">
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li class="current-user">
+<div class="user-name bold">
+atakan
+</div>
+@atakan1
+</li>
+<li class="divider"></li>
+<li>
+<a class="profile-link" data-user="atakan1" href="https://git.fixb.com/atakan1">Profile</a>
+</li>
+<li>
+<a href="https://git.fixb.com/profile">Settings</a>
+</li>
+<li>
+<a href="https://git.fixb.com/help">Help</a>
+</li>
+<li class="divider"></li>
+<li>
+<a target="_blank" class="text-nowrap" href="https://about.gitlab.com/contributing">Contribute to GitLab
+<svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#external-link"></use></svg>
+</a></li>
+<li class="divider"></li>
+
+<li>
+<a class="sign-out-link" href="https://git.fixb.com/users/sign_out">Sign out</a>
+</li>
+</ul>
+
+</div>
+</li>
+</ul>
+</div>
+<button class="navbar-toggler d-block d-sm-none" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="s12 more-icon js-navbar-toggle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#ellipsis_h"></use></svg>
+<svg class="s12 close-icon js-navbar-toggle-left"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#close"></use></svg>
+</button>
+</div>
+</div>
+</header>
+
+<div class="layout-page page-with-contextual-sidebar">
+<div class="nav-sidebar">
+<div class="nav-sidebar-inner-scroll">
+<div class="context-header">
+<a title="gateway" href="https://git.fixb.com/mamut/gateway"><div class="avatar-container s40 project-avatar">
+<div class="avatar s40 avatar-tile identicon bg2">G</div>
+</div>
+<div class="sidebar-context-title">
+gateway
+</div>
+</a></div>
+<ul class="sidebar-top-level-items">
+<li class="home"><a class="shortcuts-project" href="https://git.fixb.com/mamut/gateway"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#home"></use></svg>
+</div>
+<span class="nav-item-name">
+Project
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway"><strong class="fly-out-top-item-name">
+Project
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Project details" class="shortcuts-project" href="https://git.fixb.com/mamut/gateway"><span>Details</span>
+</a></li><li class=""><a title="Activity" class="shortcuts-project-activity" href="https://git.fixb.com/mamut/gateway/activity"><span>Activity</span>
+</a></li>
+<li class=""><a title="Cycle Analytics" class="shortcuts-project-cycle-analytics" href="https://git.fixb.com/mamut/gateway/cycle_analytics"><span>Cycle Analytics</span>
+</a></li></ul>
+</li><li class="active"><a class="shortcuts-tree" href="https://git.fixb.com/mamut/gateway/tree/master"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#doc-text"></use></svg>
+</div>
+<span class="nav-item-name">
+Repository
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item active"><a href="https://git.fixb.com/mamut/gateway/tree/master"><strong class="fly-out-top-item-name">
+Repository
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class="active"><a href="https://git.fixb.com/mamut/gateway/tree/master">Files
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/commits/master">Commits
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/branches">Branches
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/tags">Tags
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/graphs/master">Contributors
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/network/master">Graph
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/compare?from=master&amp;to=master">Compare
+</a></li><li class=""><a href="https://git.fixb.com/mamut/gateway/graphs/master/charts">Charts
+</a></li>
+</ul>
+</li><li class=""><a class="shortcuts-issues" href="https://git.fixb.com/mamut/gateway/issues"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#issues"></use></svg>
+</div>
+<span class="nav-item-name">
+Issues
+</span>
+<span class="badge badge-pill count issue_counter">
+0
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/issues"><strong class="fly-out-top-item-name">
+Issues
+</strong>
+<span class="badge badge-pill count issue_counter fly-out-badge">
+0
+</span>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Issues" href="https://git.fixb.com/mamut/gateway/issues"><span>
+List
+</span>
+</a></li><li class=""><a title="Board" href="https://git.fixb.com/mamut/gateway/boards"><span>
+Board
+</span>
+</a></li><li class=""><a title="Labels" href="https://git.fixb.com/mamut/gateway/labels"><span>
+Labels
+</span>
+</a></li>
+<li class=""><a title="Milestones" class="qa-milestones-link" href="https://git.fixb.com/mamut/gateway/milestones"><span>
+Milestones
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-merge_requests" href="https://git.fixb.com/mamut/gateway/merge_requests"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#git-merge"></use></svg>
+</div>
+<span class="nav-item-name">
+Merge Requests
+</span>
+<span class="badge badge-pill count merge_counter js-merge-counter">
+0
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/merge_requests"><strong class="fly-out-top-item-name">
+Merge Requests
+</strong>
+<span class="badge badge-pill count merge_counter js-merge-counter fly-out-badge">
+0
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-pipelines" href="https://git.fixb.com/mamut/gateway/pipelines"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#rocket"></use></svg>
+</div>
+<span class="nav-item-name">
+CI / CD
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/pipelines"><strong class="fly-out-top-item-name">
+CI / CD
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Pipelines" class="shortcuts-pipelines" href="https://git.fixb.com/mamut/gateway/pipelines"><span>
+Pipelines
+</span>
+</a></li><li class=""><a title="Jobs" class="shortcuts-builds" href="https://git.fixb.com/mamut/gateway/-/jobs"><span>
+Jobs
+</span>
+</a></li><li class=""><a title="Schedules" class="shortcuts-builds" href="https://git.fixb.com/mamut/gateway/pipeline_schedules"><span>
+Schedules
+</span>
+</a></li><li class=""><a title="Charts" class="shortcuts-pipelines-charts" href="https://git.fixb.com/mamut/gateway/pipelines/charts"><span>
+Charts
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-operations" href="https://git.fixb.com/mamut/gateway/environments/metrics"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#cloud-gear"></use></svg>
+</div>
+<span class="nav-item-name">
+Operations
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/environments/metrics"><strong class="fly-out-top-item-name">
+Operations
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class=""><a title="Metrics" class="shortcuts-metrics" href="https://git.fixb.com/mamut/gateway/environments/metrics"><span>
+Metrics
+</span>
+</a></li><li class=""><a title="Environments" class="shortcuts-environments" href="https://git.fixb.com/mamut/gateway/environments"><span>
+Environments
+</span>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-container-registry" href="https://git.fixb.com/mamut/gateway/container_registry"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#disk"></use></svg>
+</div>
+<span class="nav-item-name">
+Registry
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/container_registry"><strong class="fly-out-top-item-name">
+Registry
+</strong>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-wiki" href="https://git.fixb.com/mamut/gateway/wikis/home"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#book"></use></svg>
+</div>
+<span class="nav-item-name">
+Wiki
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/wikis/home"><strong class="fly-out-top-item-name">
+Wiki
+</strong>
+</a></li></ul>
+</li><li class=""><a class="shortcuts-snippets" href="https://git.fixb.com/mamut/gateway/snippets"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#snippet"></use></svg>
+</div>
+<span class="nav-item-name">
+Snippets
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/snippets"><strong class="fly-out-top-item-name">
+Snippets
+</strong>
+</a></li></ul>
+</li><li class=""><a title="Members" class="shortcuts-tree" href="https://git.fixb.com/mamut/gateway/settings/members"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#users"></use></svg>
+</div>
+<span class="nav-item-name">
+Members
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/mamut/gateway/project_members"><strong class="fly-out-top-item-name">
+Members
+</strong>
+</a></li></ul>
+</li><a class="toggle-sidebar-button js-toggle-sidebar" role="button" title="Toggle sidebar" type="button">
+<svg class=" icon-angle-double-left"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-double-left"></use></svg>
+<svg class=" icon-angle-double-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-double-right"></use></svg>
+<span class="collapse-text">Collapse sidebar</span>
+</a>
+<button name="button" type="button" class="close-nav-button"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#close"></use></svg>
+<span class="collapse-text">Close sidebar</span>
+</button>
+<li class="hidden">
+<a title="Activity" class="shortcuts-project-activity" href="https://git.fixb.com/mamut/gateway/activity"><span>
+Activity
+</span>
+</a></li>
+<li class="hidden">
+<a title="Network" class="shortcuts-network" href="https://git.fixb.com/mamut/gateway/network/master">Graph
+</a></li>
+<li class="hidden">
+<a title="Charts" class="shortcuts-repository-charts" href="https://git.fixb.com/mamut/gateway/graphs/master/charts">Charts
+</a></li>
+<li class="hidden">
+<a class="shortcuts-new-issue" href="https://git.fixb.com/mamut/gateway/issues/new">Create a new issue
+</a></li>
+<li class="hidden">
+<a title="Jobs" class="shortcuts-builds" href="https://git.fixb.com/mamut/gateway/-/jobs">Jobs
+</a></li>
+<li class="hidden">
+<a title="Commits" class="shortcuts-commits" href="https://git.fixb.com/mamut/gateway/commits/master">Commits
+</a></li>
+<li class="hidden">
+<a title="Issue Boards" class="shortcuts-issue-boards" href="https://git.fixb.com/mamut/gateway/boards">Issue Boards</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="content-wrapper">
+
+<div class="mobile-overlay"></div>
+<div class="alert-wrapper">
+
+
+
+
+<nav class="breadcrumbs container-fluid container-limited" role="navigation">
+<div class="breadcrumbs-container">
+<button name="button" type="button" class="toggle-mobile-nav"><span class="sr-only">Open sidebar</span>
+<i aria-hidden="true" data-hidden="true" class="fa fa-bars"></i>
+</button><div class="breadcrumbs-links js-title-container">
+<ul class="list-unstyled breadcrumbs-list js-breadcrumbs-list">
+<li><a class="group-path breadcrumb-item-text js-breadcrumb-item-text " href="https://git.fixb.com/mamut">mamut</a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></li> <li><a href="https://git.fixb.com/mamut/gateway"><span class="breadcrumb-item-text js-breadcrumb-item-text">gateway</span></a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></li>
+
+<li>
+<h2 class="breadcrumbs-sub-title"><a href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl">Repository</a></h2>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="flash-container flash-container-page">
+</div>
+
+</div>
+<div class=" ">
+<div class="content" id="content-body">
+<div class="js-signature-container" data-signatures-path="/mamut/gateway/commits/8d5c2fc6748a7501d236373d30af3f00cbb175fe/signatures"></div>
+<div class="container-fluid container-limited">
+
+<div class="tree-holder" id="tree-holder">
+<div class="nav-block">
+<div class="tree-ref-container">
+<div class="tree-ref-holder">
+<form class="project-refs-form" action="https://git.fixb.com/mamut/gateway/refs/switch" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="destination" id="destination" value="blob">
+<input type="hidden" name="path" id="path" value="confd/templates/config.yml.tmpl">
+<div class="dropdown">
+<button class="dropdown-menu-toggle js-project-refs-dropdown qa-branches-select" type="button" data-toggle="dropdown" data-selected="master" data-ref="master" data-refs-url="/mamut/gateway/refs?sort=updated_desc" data-field-name="ref" data-submit-form-on-click="true" data-visit="true"><span class="dropdown-toggle-text ">master</span><i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i></button>
+<div class="dropdown-menu dropdown-menu-paging dropdown-menu-selectable git-revision-dropdown qa-branches-dropdown">
+<div class="dropdown-page-one">
+<div class="dropdown-title"><span>Switch branch/tag</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-menu-close-icon"></i></button></div>
+<div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Search branches and tags" autocomplete="off"><i aria-hidden="true" data-hidden="true" class="fa fa-search dropdown-input-search"></i><i role="button" aria-hidden="true" data-hidden="true" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div>
+<div class="dropdown-content"></div>
+<div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<ul class="breadcrumb repo-breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://git.fixb.com/mamut/gateway/tree/master">gateway
+</a></li>
+<li class="breadcrumb-item">
+<a href="https://git.fixb.com/mamut/gateway/tree/master/confd">confd</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://git.fixb.com/mamut/gateway/tree/master/confd/templates">templates</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl"><strong>config.yml.tmpl</strong>
+</a></li>
+</ul>
+</div>
+<div class="tree-controls">
+<a class="btn shortcuts-find-file" rel="nofollow" href="https://git.fixb.com/mamut/gateway/find_file/master"><i aria-hidden="true" data-hidden="true" class="fa fa-search"></i>
+<span>Find file</span>
+</a>
+<div class="btn-group" role="group"><a class="btn js-blob-blame-link" href="https://git.fixb.com/mamut/gateway/blame/master/confd/templates/config.yml.tmpl">Blame</a><a class="btn" href="https://git.fixb.com/mamut/gateway/commits/master/confd/templates/config.yml.tmpl">History</a><a class="btn js-data-file-blob-permalink-url" href="https://git.fixb.com/mamut/gateway/blob/3d45e6e93bec62578421929e119b0bde6bdad574/confd/templates/config.yml.tmpl">Permalink</a></div>
+</div>
+</div>
+
+<div class="info-well d-none d-sm-block">
+<div class="well-segment">
+<ul class="blob-commit-info">
+<li class="commit flex-row js-toggle-container" id="commit-8d5c2fc6">
+<div class="avatar-cell d-none d-sm-block">
+<a href="https://git.fixb.com/teyfik"><img alt="teyfik&#39;s avatar" src="./confd_templates_config.yml.tmpl · master · mamut _ gateway · GitLab_files/4dfc23c0b38bb435847f92400d83dd0c" class="avatar s36 d-none d-sm-inline" title="teyfik"></a>
+</div>
+<div class="commit-detail flex-list">
+<div class="commit-content qa-commit-content">
+<a class="commit-row-message item-title" href="https://git.fixb.com/mamut/gateway/commit/8d5c2fc6748a7501d236373d30af3f00cbb175fe">Update event routes</a>
+<span class="commit-row-message d-block d-sm-none">
+·
+8d5c2fc6
+</span>
+<div class="commiter">
+<a class="commit-author-link" href="https://git.fixb.com/teyfik">teyfik</a> authored <time class="js-timeago js-timeago-render" title="" datetime="2018-11-27T07:32:24Z" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Nov 27, 2018 7:32am" data-tid="3">3 days ago</time>
+</div>
+</div>
+<div class="commit-actions flex-row d-none d-sm-flex">
+
+<div class="js-commit-pipeline-status" data-endpoint="/mamut/gateway/commit/8d5c2fc6748a7501d236373d30af3f00cbb175fe/pipelines?ref=master"></div>
+<div class="commit-sha-group">
+<div class="label label-monospace">
+8d5c2fc6
+</div>
+<button class="btn btn btn-default" data-toggle="tooltip" data-placement="bottom" data-container="body" data-title="Copy commit SHA to clipboard" data-class="btn btn-default" data-clipboard-text="8d5c2fc6748a7501d236373d30af3f00cbb175fe" type="button" title="Copy commit SHA to clipboard" aria-label="Copy commit SHA to clipboard"><svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#duplicate"></use></svg></button>
+
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+</div>
+
+
+</div>
+<div class="blob-content-holder" id="blob-content-holder">
+<article class="file-holder">
+<div class="js-file-title file-title-flex-parent">
+<div class="file-header-content">
+<i aria-hidden="true" data-hidden="true" class="fa fa-file-text-o fa-fw"></i>
+<strong class="file-title-name">
+config.yml.tmpl
+</strong>
+<button class="btn btn-clipboard btn-transparent prepend-left-5" data-toggle="tooltip" data-placement="bottom" data-container="body" data-class="btn-clipboard btn-transparent prepend-left-5" data-title="Copy file path to clipboard" data-clipboard-text="{&quot;text&quot;:&quot;confd/templates/config.yml.tmpl&quot;,&quot;gfm&quot;:&quot;`confd/templates/config.yml.tmpl`&quot;}" type="button" title="Copy file path to clipboard" aria-label="Copy file path to clipboard"><svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#duplicate"></use></svg></button>
+<small>
+18.7 KB
+</small>
+</div>
+
+<div class="file-actions">
+
+<div class="btn-group" role="group"><button class="btn btn-sm js-copy-blob-source-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-class="btn btn-sm js-copy-blob-source-btn" data-title="Copy source to clipboard" data-clipboard-target=".blob-content[data-blob-id=&#39;dc5e494e2a09317c2b0f0ec5fec62cea05b4d9a2&#39;]" type="button" title="" aria-label="Copy source to clipboard" data-original-title="Copy source to clipboard"><svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#duplicate"></use></svg></button><a class="btn btn-sm has-tooltip" target="_blank" rel="noopener noreferrer" title="Open raw" data-container="body" href="https://git.fixb.com/mamut/gateway/raw/master/confd/templates/config.yml.tmpl"><i aria-hidden="true" data-hidden="true" class="fa fa-file-code-o"></i></a><a download="confd/templates/config.yml.tmpl" class="btn btn-sm has-tooltip" target="_blank" rel="noopener noreferrer" title="Download" data-container="body" href="https://git.fixb.com/mamut/gateway/raw/master/confd/templates/config.yml.tmpl?inline=false"><svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#download"></use></svg></a></div>
+<div class="btn-group" role="group"><a class="btn js-edit-blob  btn-sm" href="https://git.fixb.com/mamut/gateway/edit/master/confd/templates/config.yml.tmpl">Edit</a><a class="btn btn-default btn-sm" href="https://git.fixb.com/-/ide/project/mamut/gateway/edit/master/-/confd/templates/config.yml.tmpl">Web IDE</a><button name="button" type="submit" class="btn btn-default" data-target="#modal-upload-blob" data-toggle="modal">Replace</button><button name="button" type="submit" class="btn btn-remove" data-target="#modal-remove-blob" data-toggle="modal">Delete</button></div>
+</div>
+</div>
+<div class="js-file-fork-suggestion-section file-fork-suggestion hidden">
+<span class="file-fork-suggestion-note">
+You're not allowed to
+<span class="js-file-fork-suggestion-section-action">
+edit
+</span>
+files in this project directly. Please fork this project,
+make your changes there, and submit a merge request.
+</span>
+<a class="js-fork-suggestion-button btn btn-grouped btn-inverted btn-new" rel="nofollow" data-method="post" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl">Fork</a>
+<button class="js-cancel-fork-suggestion-button btn btn-grouped" type="button">
+Cancel
+</button>
+</div>
+
+
+
+<div class="blob-viewer" data-type="simple" data-url="/mamut/gateway/blob/master/confd/templates/config.yml.tmpl?format=json&amp;viewer=simple" data-loading="true" data-loaded="true"><div class="blob-viewer" data-type="simple">
+<div class="file-content code js-syntax-highlight white">
+<div class="line-numbers">
+<a class="diff-line-num" data-line-number="1" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L1" id="L1">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+1
+</a>
+<a class="diff-line-num" data-line-number="2" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L2" id="L2">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+2
+</a>
+<a class="diff-line-num" data-line-number="3" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L3" id="L3">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+3
+</a>
+<a class="diff-line-num" data-line-number="4" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L4" id="L4">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+4
+</a>
+<a class="diff-line-num" data-line-number="5" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L5" id="L5">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+5
+</a>
+<a class="diff-line-num" data-line-number="6" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L6" id="L6">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+6
+</a>
+<a class="diff-line-num" data-line-number="7" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L7" id="L7">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+7
+</a>
+<a class="diff-line-num" data-line-number="8" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L8" id="L8">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+8
+</a>
+<a class="diff-line-num" data-line-number="9" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L9" id="L9">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+9
+</a>
+<a class="diff-line-num" data-line-number="10" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L10" id="L10">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+10
+</a>
+<a class="diff-line-num" data-line-number="11" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L11" id="L11">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+11
+</a>
+<a class="diff-line-num" data-line-number="12" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L12" id="L12">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+12
+</a>
+<a class="diff-line-num" data-line-number="13" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L13" id="L13">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+13
+</a>
+<a class="diff-line-num" data-line-number="14" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L14" id="L14">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+14
+</a>
+<a class="diff-line-num" data-line-number="15" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L15" id="L15">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+15
+</a>
+<a class="diff-line-num" data-line-number="16" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L16" id="L16">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+16
+</a>
+<a class="diff-line-num" data-line-number="17" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L17" id="L17">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+17
+</a>
+<a class="diff-line-num" data-line-number="18" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L18" id="L18">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+18
+</a>
+<a class="diff-line-num" data-line-number="19" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L19" id="L19">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+19
+</a>
+<a class="diff-line-num" data-line-number="20" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L20" id="L20">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+20
+</a>
+<a class="diff-line-num" data-line-number="21" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L21" id="L21">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+21
+</a>
+<a class="diff-line-num" data-line-number="22" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L22" id="L22">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+22
+</a>
+<a class="diff-line-num" data-line-number="23" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L23" id="L23">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+23
+</a>
+<a class="diff-line-num" data-line-number="24" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L24" id="L24">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+24
+</a>
+<a class="diff-line-num" data-line-number="25" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L25" id="L25">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+25
+</a>
+<a class="diff-line-num" data-line-number="26" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L26" id="L26">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+26
+</a>
+<a class="diff-line-num" data-line-number="27" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L27" id="L27">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+27
+</a>
+<a class="diff-line-num" data-line-number="28" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L28" id="L28">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+28
+</a>
+<a class="diff-line-num" data-line-number="29" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L29" id="L29">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+29
+</a>
+<a class="diff-line-num" data-line-number="30" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L30" id="L30">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+30
+</a>
+<a class="diff-line-num" data-line-number="31" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L31" id="L31">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+31
+</a>
+<a class="diff-line-num" data-line-number="32" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L32" id="L32">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+32
+</a>
+<a class="diff-line-num" data-line-number="33" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L33" id="L33">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+33
+</a>
+<a class="diff-line-num" data-line-number="34" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L34" id="L34">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+34
+</a>
+<a class="diff-line-num" data-line-number="35" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L35" id="L35">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+35
+</a>
+<a class="diff-line-num" data-line-number="36" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L36" id="L36">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+36
+</a>
+<a class="diff-line-num" data-line-number="37" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L37" id="L37">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+37
+</a>
+<a class="diff-line-num" data-line-number="38" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L38" id="L38">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+38
+</a>
+<a class="diff-line-num" data-line-number="39" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L39" id="L39">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+39
+</a>
+<a class="diff-line-num" data-line-number="40" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L40" id="L40">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+40
+</a>
+<a class="diff-line-num" data-line-number="41" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L41" id="L41">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+41
+</a>
+<a class="diff-line-num" data-line-number="42" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L42" id="L42">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+42
+</a>
+<a class="diff-line-num" data-line-number="43" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L43" id="L43">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+43
+</a>
+<a class="diff-line-num" data-line-number="44" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L44" id="L44">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+44
+</a>
+<a class="diff-line-num" data-line-number="45" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L45" id="L45">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+45
+</a>
+<a class="diff-line-num" data-line-number="46" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L46" id="L46">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+46
+</a>
+<a class="diff-line-num" data-line-number="47" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L47" id="L47">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+47
+</a>
+<a class="diff-line-num" data-line-number="48" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L48" id="L48">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+48
+</a>
+<a class="diff-line-num" data-line-number="49" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L49" id="L49">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+49
+</a>
+<a class="diff-line-num" data-line-number="50" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L50" id="L50">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+50
+</a>
+<a class="diff-line-num" data-line-number="51" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L51" id="L51">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+51
+</a>
+<a class="diff-line-num" data-line-number="52" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L52" id="L52">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+52
+</a>
+<a class="diff-line-num" data-line-number="53" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L53" id="L53">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+53
+</a>
+<a class="diff-line-num" data-line-number="54" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L54" id="L54">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+54
+</a>
+<a class="diff-line-num" data-line-number="55" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L55" id="L55">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+55
+</a>
+<a class="diff-line-num" data-line-number="56" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L56" id="L56">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+56
+</a>
+<a class="diff-line-num" data-line-number="57" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L57" id="L57">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+57
+</a>
+<a class="diff-line-num" data-line-number="58" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L58" id="L58">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+58
+</a>
+<a class="diff-line-num" data-line-number="59" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L59" id="L59">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+59
+</a>
+<a class="diff-line-num" data-line-number="60" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L60" id="L60">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+60
+</a>
+<a class="diff-line-num" data-line-number="61" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L61" id="L61">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+61
+</a>
+<a class="diff-line-num" data-line-number="62" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L62" id="L62">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+62
+</a>
+<a class="diff-line-num" data-line-number="63" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L63" id="L63">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+63
+</a>
+<a class="diff-line-num" data-line-number="64" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L64" id="L64">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+64
+</a>
+<a class="diff-line-num" data-line-number="65" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L65" id="L65">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+65
+</a>
+<a class="diff-line-num" data-line-number="66" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L66" id="L66">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+66
+</a>
+<a class="diff-line-num" data-line-number="67" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L67" id="L67">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+67
+</a>
+<a class="diff-line-num" data-line-number="68" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L68" id="L68">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+68
+</a>
+<a class="diff-line-num" data-line-number="69" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L69" id="L69">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+69
+</a>
+<a class="diff-line-num" data-line-number="70" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L70" id="L70">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+70
+</a>
+<a class="diff-line-num" data-line-number="71" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L71" id="L71">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+71
+</a>
+<a class="diff-line-num" data-line-number="72" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L72" id="L72">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+72
+</a>
+<a class="diff-line-num" data-line-number="73" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L73" id="L73">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+73
+</a>
+<a class="diff-line-num" data-line-number="74" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L74" id="L74">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+74
+</a>
+<a class="diff-line-num" data-line-number="75" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L75" id="L75">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+75
+</a>
+<a class="diff-line-num" data-line-number="76" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L76" id="L76">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+76
+</a>
+<a class="diff-line-num" data-line-number="77" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L77" id="L77">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+77
+</a>
+<a class="diff-line-num" data-line-number="78" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L78" id="L78">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+78
+</a>
+<a class="diff-line-num" data-line-number="79" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L79" id="L79">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+79
+</a>
+<a class="diff-line-num" data-line-number="80" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L80" id="L80">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+80
+</a>
+<a class="diff-line-num" data-line-number="81" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L81" id="L81">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+81
+</a>
+<a class="diff-line-num" data-line-number="82" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L82" id="L82">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+82
+</a>
+<a class="diff-line-num" data-line-number="83" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L83" id="L83">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+83
+</a>
+<a class="diff-line-num" data-line-number="84" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L84" id="L84">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+84
+</a>
+<a class="diff-line-num" data-line-number="85" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L85" id="L85">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+85
+</a>
+<a class="diff-line-num" data-line-number="86" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L86" id="L86">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+86
+</a>
+<a class="diff-line-num" data-line-number="87" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L87" id="L87">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+87
+</a>
+<a class="diff-line-num" data-line-number="88" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L88" id="L88">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+88
+</a>
+<a class="diff-line-num" data-line-number="89" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L89" id="L89">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+89
+</a>
+<a class="diff-line-num" data-line-number="90" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L90" id="L90">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+90
+</a>
+<a class="diff-line-num" data-line-number="91" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L91" id="L91">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+91
+</a>
+<a class="diff-line-num" data-line-number="92" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L92" id="L92">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+92
+</a>
+<a class="diff-line-num" data-line-number="93" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L93" id="L93">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+93
+</a>
+<a class="diff-line-num" data-line-number="94" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L94" id="L94">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+94
+</a>
+<a class="diff-line-num" data-line-number="95" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L95" id="L95">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+95
+</a>
+<a class="diff-line-num" data-line-number="96" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L96" id="L96">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+96
+</a>
+<a class="diff-line-num" data-line-number="97" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L97" id="L97">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+97
+</a>
+<a class="diff-line-num" data-line-number="98" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L98" id="L98">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+98
+</a>
+<a class="diff-line-num" data-line-number="99" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L99" id="L99">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+99
+</a>
+<a class="diff-line-num" data-line-number="100" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L100" id="L100">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+100
+</a>
+<a class="diff-line-num" data-line-number="101" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L101" id="L101">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+101
+</a>
+<a class="diff-line-num" data-line-number="102" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L102" id="L102">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+102
+</a>
+<a class="diff-line-num" data-line-number="103" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L103" id="L103">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+103
+</a>
+<a class="diff-line-num" data-line-number="104" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L104" id="L104">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+104
+</a>
+<a class="diff-line-num" data-line-number="105" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L105" id="L105">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+105
+</a>
+<a class="diff-line-num" data-line-number="106" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L106" id="L106">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+106
+</a>
+<a class="diff-line-num" data-line-number="107" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L107" id="L107">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+107
+</a>
+<a class="diff-line-num" data-line-number="108" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L108" id="L108">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+108
+</a>
+<a class="diff-line-num" data-line-number="109" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L109" id="L109">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+109
+</a>
+<a class="diff-line-num" data-line-number="110" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L110" id="L110">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+110
+</a>
+<a class="diff-line-num" data-line-number="111" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L111" id="L111">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+111
+</a>
+<a class="diff-line-num" data-line-number="112" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L112" id="L112">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+112
+</a>
+<a class="diff-line-num" data-line-number="113" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L113" id="L113">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+113
+</a>
+<a class="diff-line-num" data-line-number="114" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L114" id="L114">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+114
+</a>
+<a class="diff-line-num" data-line-number="115" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L115" id="L115">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+115
+</a>
+<a class="diff-line-num" data-line-number="116" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L116" id="L116">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+116
+</a>
+<a class="diff-line-num" data-line-number="117" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L117" id="L117">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+117
+</a>
+<a class="diff-line-num" data-line-number="118" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L118" id="L118">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+118
+</a>
+<a class="diff-line-num" data-line-number="119" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L119" id="L119">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+119
+</a>
+<a class="diff-line-num" data-line-number="120" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L120" id="L120">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+120
+</a>
+<a class="diff-line-num" data-line-number="121" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L121" id="L121">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+121
+</a>
+<a class="diff-line-num" data-line-number="122" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L122" id="L122">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+122
+</a>
+<a class="diff-line-num" data-line-number="123" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L123" id="L123">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+123
+</a>
+<a class="diff-line-num" data-line-number="124" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L124" id="L124">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+124
+</a>
+<a class="diff-line-num" data-line-number="125" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L125" id="L125">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+125
+</a>
+<a class="diff-line-num" data-line-number="126" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L126" id="L126">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+126
+</a>
+<a class="diff-line-num" data-line-number="127" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L127" id="L127">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+127
+</a>
+<a class="diff-line-num" data-line-number="128" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L128" id="L128">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+128
+</a>
+<a class="diff-line-num" data-line-number="129" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L129" id="L129">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+129
+</a>
+<a class="diff-line-num" data-line-number="130" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L130" id="L130">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+130
+</a>
+<a class="diff-line-num" data-line-number="131" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L131" id="L131">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+131
+</a>
+<a class="diff-line-num" data-line-number="132" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L132" id="L132">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+132
+</a>
+<a class="diff-line-num" data-line-number="133" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L133" id="L133">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+133
+</a>
+<a class="diff-line-num" data-line-number="134" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L134" id="L134">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+134
+</a>
+<a class="diff-line-num" data-line-number="135" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L135" id="L135">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+135
+</a>
+<a class="diff-line-num" data-line-number="136" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L136" id="L136">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+136
+</a>
+<a class="diff-line-num" data-line-number="137" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L137" id="L137">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+137
+</a>
+<a class="diff-line-num" data-line-number="138" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L138" id="L138">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+138
+</a>
+<a class="diff-line-num" data-line-number="139" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L139" id="L139">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+139
+</a>
+<a class="diff-line-num" data-line-number="140" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L140" id="L140">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+140
+</a>
+<a class="diff-line-num" data-line-number="141" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L141" id="L141">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+141
+</a>
+<a class="diff-line-num" data-line-number="142" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L142" id="L142">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+142
+</a>
+<a class="diff-line-num" data-line-number="143" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L143" id="L143">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+143
+</a>
+<a class="diff-line-num" data-line-number="144" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L144" id="L144">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+144
+</a>
+<a class="diff-line-num" data-line-number="145" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L145" id="L145">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+145
+</a>
+<a class="diff-line-num" data-line-number="146" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L146" id="L146">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+146
+</a>
+<a class="diff-line-num" data-line-number="147" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L147" id="L147">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+147
+</a>
+<a class="diff-line-num" data-line-number="148" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L148" id="L148">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+148
+</a>
+<a class="diff-line-num" data-line-number="149" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L149" id="L149">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+149
+</a>
+<a class="diff-line-num" data-line-number="150" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L150" id="L150">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+150
+</a>
+<a class="diff-line-num" data-line-number="151" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L151" id="L151">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+151
+</a>
+<a class="diff-line-num" data-line-number="152" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L152" id="L152">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+152
+</a>
+<a class="diff-line-num" data-line-number="153" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L153" id="L153">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+153
+</a>
+<a class="diff-line-num" data-line-number="154" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L154" id="L154">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+154
+</a>
+<a class="diff-line-num" data-line-number="155" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L155" id="L155">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+155
+</a>
+<a class="diff-line-num" data-line-number="156" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L156" id="L156">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+156
+</a>
+<a class="diff-line-num" data-line-number="157" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L157" id="L157">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+157
+</a>
+<a class="diff-line-num" data-line-number="158" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L158" id="L158">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+158
+</a>
+<a class="diff-line-num" data-line-number="159" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L159" id="L159">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+159
+</a>
+<a class="diff-line-num" data-line-number="160" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L160" id="L160">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+160
+</a>
+<a class="diff-line-num" data-line-number="161" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L161" id="L161">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+161
+</a>
+<a class="diff-line-num" data-line-number="162" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L162" id="L162">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+162
+</a>
+<a class="diff-line-num" data-line-number="163" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L163" id="L163">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+163
+</a>
+<a class="diff-line-num" data-line-number="164" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L164" id="L164">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+164
+</a>
+<a class="diff-line-num" data-line-number="165" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L165" id="L165">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+165
+</a>
+<a class="diff-line-num" data-line-number="166" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L166" id="L166">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+166
+</a>
+<a class="diff-line-num" data-line-number="167" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L167" id="L167">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+167
+</a>
+<a class="diff-line-num" data-line-number="168" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L168" id="L168">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+168
+</a>
+<a class="diff-line-num" data-line-number="169" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L169" id="L169">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+169
+</a>
+<a class="diff-line-num" data-line-number="170" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L170" id="L170">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+170
+</a>
+<a class="diff-line-num" data-line-number="171" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L171" id="L171">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+171
+</a>
+<a class="diff-line-num" data-line-number="172" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L172" id="L172">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+172
+</a>
+<a class="diff-line-num" data-line-number="173" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L173" id="L173">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+173
+</a>
+<a class="diff-line-num" data-line-number="174" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L174" id="L174">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+174
+</a>
+<a class="diff-line-num" data-line-number="175" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L175" id="L175">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+175
+</a>
+<a class="diff-line-num" data-line-number="176" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L176" id="L176">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+176
+</a>
+<a class="diff-line-num" data-line-number="177" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L177" id="L177">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+177
+</a>
+<a class="diff-line-num" data-line-number="178" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L178" id="L178">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+178
+</a>
+<a class="diff-line-num" data-line-number="179" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L179" id="L179">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+179
+</a>
+<a class="diff-line-num" data-line-number="180" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L180" id="L180">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+180
+</a>
+<a class="diff-line-num" data-line-number="181" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L181" id="L181">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+181
+</a>
+<a class="diff-line-num" data-line-number="182" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L182" id="L182">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+182
+</a>
+<a class="diff-line-num" data-line-number="183" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L183" id="L183">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+183
+</a>
+<a class="diff-line-num" data-line-number="184" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L184" id="L184">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+184
+</a>
+<a class="diff-line-num" data-line-number="185" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L185" id="L185">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+185
+</a>
+<a class="diff-line-num" data-line-number="186" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L186" id="L186">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+186
+</a>
+<a class="diff-line-num" data-line-number="187" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L187" id="L187">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+187
+</a>
+<a class="diff-line-num" data-line-number="188" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L188" id="L188">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+188
+</a>
+<a class="diff-line-num" data-line-number="189" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L189" id="L189">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+189
+</a>
+<a class="diff-line-num" data-line-number="190" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L190" id="L190">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+190
+</a>
+<a class="diff-line-num" data-line-number="191" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L191" id="L191">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+191
+</a>
+<a class="diff-line-num" data-line-number="192" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L192" id="L192">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+192
+</a>
+<a class="diff-line-num" data-line-number="193" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L193" id="L193">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+193
+</a>
+<a class="diff-line-num" data-line-number="194" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L194" id="L194">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+194
+</a>
+<a class="diff-line-num" data-line-number="195" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L195" id="L195">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+195
+</a>
+<a class="diff-line-num" data-line-number="196" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L196" id="L196">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+196
+</a>
+<a class="diff-line-num" data-line-number="197" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L197" id="L197">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+197
+</a>
+<a class="diff-line-num" data-line-number="198" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L198" id="L198">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+198
+</a>
+<a class="diff-line-num" data-line-number="199" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L199" id="L199">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+199
+</a>
+<a class="diff-line-num" data-line-number="200" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L200" id="L200">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+200
+</a>
+<a class="diff-line-num" data-line-number="201" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L201" id="L201">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+201
+</a>
+<a class="diff-line-num" data-line-number="202" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L202" id="L202">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+202
+</a>
+<a class="diff-line-num" data-line-number="203" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L203" id="L203">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+203
+</a>
+<a class="diff-line-num" data-line-number="204" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L204" id="L204">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+204
+</a>
+<a class="diff-line-num" data-line-number="205" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L205" id="L205">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+205
+</a>
+<a class="diff-line-num" data-line-number="206" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L206" id="L206">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+206
+</a>
+<a class="diff-line-num" data-line-number="207" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L207" id="L207">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+207
+</a>
+<a class="diff-line-num" data-line-number="208" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L208" id="L208">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+208
+</a>
+<a class="diff-line-num" data-line-number="209" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L209" id="L209">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+209
+</a>
+<a class="diff-line-num" data-line-number="210" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L210" id="L210">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+210
+</a>
+<a class="diff-line-num" data-line-number="211" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L211" id="L211">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+211
+</a>
+<a class="diff-line-num" data-line-number="212" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L212" id="L212">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+212
+</a>
+<a class="diff-line-num" data-line-number="213" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L213" id="L213">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+213
+</a>
+<a class="diff-line-num" data-line-number="214" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L214" id="L214">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+214
+</a>
+<a class="diff-line-num" data-line-number="215" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L215" id="L215">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+215
+</a>
+<a class="diff-line-num" data-line-number="216" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L216" id="L216">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+216
+</a>
+<a class="diff-line-num" data-line-number="217" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L217" id="L217">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+217
+</a>
+<a class="diff-line-num" data-line-number="218" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L218" id="L218">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+218
+</a>
+<a class="diff-line-num" data-line-number="219" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L219" id="L219">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+219
+</a>
+<a class="diff-line-num" data-line-number="220" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L220" id="L220">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+220
+</a>
+<a class="diff-line-num" data-line-number="221" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L221" id="L221">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+221
+</a>
+<a class="diff-line-num" data-line-number="222" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L222" id="L222">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+222
+</a>
+<a class="diff-line-num" data-line-number="223" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L223" id="L223">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+223
+</a>
+<a class="diff-line-num" data-line-number="224" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L224" id="L224">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+224
+</a>
+<a class="diff-line-num" data-line-number="225" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L225" id="L225">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+225
+</a>
+<a class="diff-line-num" data-line-number="226" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L226" id="L226">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+226
+</a>
+<a class="diff-line-num" data-line-number="227" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L227" id="L227">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+227
+</a>
+<a class="diff-line-num" data-line-number="228" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L228" id="L228">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+228
+</a>
+<a class="diff-line-num" data-line-number="229" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L229" id="L229">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+229
+</a>
+<a class="diff-line-num" data-line-number="230" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L230" id="L230">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+230
+</a>
+<a class="diff-line-num" data-line-number="231" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L231" id="L231">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+231
+</a>
+<a class="diff-line-num" data-line-number="232" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L232" id="L232">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+232
+</a>
+<a class="diff-line-num" data-line-number="233" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L233" id="L233">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+233
+</a>
+<a class="diff-line-num" data-line-number="234" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L234" id="L234">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+234
+</a>
+<a class="diff-line-num" data-line-number="235" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L235" id="L235">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+235
+</a>
+<a class="diff-line-num" data-line-number="236" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L236" id="L236">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+236
+</a>
+<a class="diff-line-num" data-line-number="237" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L237" id="L237">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+237
+</a>
+<a class="diff-line-num" data-line-number="238" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L238" id="L238">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+238
+</a>
+<a class="diff-line-num" data-line-number="239" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L239" id="L239">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+239
+</a>
+<a class="diff-line-num" data-line-number="240" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L240" id="L240">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+240
+</a>
+<a class="diff-line-num" data-line-number="241" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L241" id="L241">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+241
+</a>
+<a class="diff-line-num" data-line-number="242" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L242" id="L242">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+242
+</a>
+<a class="diff-line-num" data-line-number="243" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L243" id="L243">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+243
+</a>
+<a class="diff-line-num" data-line-number="244" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L244" id="L244">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+244
+</a>
+<a class="diff-line-num" data-line-number="245" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L245" id="L245">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+245
+</a>
+<a class="diff-line-num" data-line-number="246" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L246" id="L246">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+246
+</a>
+<a class="diff-line-num" data-line-number="247" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L247" id="L247">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+247
+</a>
+<a class="diff-line-num" data-line-number="248" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L248" id="L248">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+248
+</a>
+<a class="diff-line-num" data-line-number="249" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L249" id="L249">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+249
+</a>
+<a class="diff-line-num" data-line-number="250" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L250" id="L250">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+250
+</a>
+<a class="diff-line-num" data-line-number="251" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L251" id="L251">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+251
+</a>
+<a class="diff-line-num" data-line-number="252" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L252" id="L252">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+252
+</a>
+<a class="diff-line-num" data-line-number="253" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L253" id="L253">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+253
+</a>
+<a class="diff-line-num" data-line-number="254" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L254" id="L254">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+254
+</a>
+<a class="diff-line-num" data-line-number="255" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L255" id="L255">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+255
+</a>
+<a class="diff-line-num" data-line-number="256" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L256" id="L256">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+256
+</a>
+<a class="diff-line-num" data-line-number="257" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L257" id="L257">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+257
+</a>
+<a class="diff-line-num" data-line-number="258" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L258" id="L258">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+258
+</a>
+<a class="diff-line-num" data-line-number="259" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L259" id="L259">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+259
+</a>
+<a class="diff-line-num" data-line-number="260" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L260" id="L260">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+260
+</a>
+<a class="diff-line-num" data-line-number="261" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L261" id="L261">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+261
+</a>
+<a class="diff-line-num" data-line-number="262" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L262" id="L262">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+262
+</a>
+<a class="diff-line-num" data-line-number="263" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L263" id="L263">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+263
+</a>
+<a class="diff-line-num" data-line-number="264" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L264" id="L264">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+264
+</a>
+<a class="diff-line-num" data-line-number="265" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L265" id="L265">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+265
+</a>
+<a class="diff-line-num" data-line-number="266" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L266" id="L266">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+266
+</a>
+<a class="diff-line-num" data-line-number="267" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L267" id="L267">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+267
+</a>
+<a class="diff-line-num" data-line-number="268" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L268" id="L268">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+268
+</a>
+<a class="diff-line-num" data-line-number="269" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L269" id="L269">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+269
+</a>
+<a class="diff-line-num" data-line-number="270" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L270" id="L270">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+270
+</a>
+<a class="diff-line-num" data-line-number="271" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L271" id="L271">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+271
+</a>
+<a class="diff-line-num" data-line-number="272" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L272" id="L272">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+272
+</a>
+<a class="diff-line-num" data-line-number="273" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L273" id="L273">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+273
+</a>
+<a class="diff-line-num" data-line-number="274" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L274" id="L274">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+274
+</a>
+<a class="diff-line-num" data-line-number="275" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L275" id="L275">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+275
+</a>
+<a class="diff-line-num" data-line-number="276" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L276" id="L276">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+276
+</a>
+<a class="diff-line-num" data-line-number="277" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L277" id="L277">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+277
+</a>
+<a class="diff-line-num" data-line-number="278" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L278" id="L278">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+278
+</a>
+<a class="diff-line-num" data-line-number="279" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L279" id="L279">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+279
+</a>
+<a class="diff-line-num" data-line-number="280" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L280" id="L280">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+280
+</a>
+<a class="diff-line-num" data-line-number="281" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L281" id="L281">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+281
+</a>
+<a class="diff-line-num" data-line-number="282" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L282" id="L282">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+282
+</a>
+<a class="diff-line-num" data-line-number="283" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L283" id="L283">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+283
+</a>
+<a class="diff-line-num" data-line-number="284" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L284" id="L284">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+284
+</a>
+<a class="diff-line-num" data-line-number="285" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L285" id="L285">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+285
+</a>
+<a class="diff-line-num" data-line-number="286" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L286" id="L286">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+286
+</a>
+<a class="diff-line-num" data-line-number="287" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L287" id="L287">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+287
+</a>
+<a class="diff-line-num" data-line-number="288" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L288" id="L288">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+288
+</a>
+<a class="diff-line-num" data-line-number="289" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L289" id="L289">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+289
+</a>
+<a class="diff-line-num" data-line-number="290" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L290" id="L290">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+290
+</a>
+<a class="diff-line-num" data-line-number="291" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L291" id="L291">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+291
+</a>
+<a class="diff-line-num" data-line-number="292" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L292" id="L292">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+292
+</a>
+<a class="diff-line-num" data-line-number="293" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L293" id="L293">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+293
+</a>
+<a class="diff-line-num" data-line-number="294" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L294" id="L294">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+294
+</a>
+<a class="diff-line-num" data-line-number="295" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L295" id="L295">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+295
+</a>
+<a class="diff-line-num" data-line-number="296" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L296" id="L296">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+296
+</a>
+<a class="diff-line-num" data-line-number="297" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L297" id="L297">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+297
+</a>
+<a class="diff-line-num" data-line-number="298" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L298" id="L298">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+298
+</a>
+<a class="diff-line-num" data-line-number="299" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L299" id="L299">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+299
+</a>
+<a class="diff-line-num" data-line-number="300" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L300" id="L300">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+300
+</a>
+<a class="diff-line-num" data-line-number="301" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L301" id="L301">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+301
+</a>
+<a class="diff-line-num" data-line-number="302" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L302" id="L302">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+302
+</a>
+<a class="diff-line-num" data-line-number="303" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L303" id="L303">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+303
+</a>
+<a class="diff-line-num" data-line-number="304" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L304" id="L304">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+304
+</a>
+<a class="diff-line-num" data-line-number="305" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L305" id="L305">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+305
+</a>
+<a class="diff-line-num" data-line-number="306" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L306" id="L306">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+306
+</a>
+<a class="diff-line-num" data-line-number="307" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L307" id="L307">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+307
+</a>
+<a class="diff-line-num" data-line-number="308" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L308" id="L308">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+308
+</a>
+<a class="diff-line-num" data-line-number="309" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L309" id="L309">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+309
+</a>
+<a class="diff-line-num" data-line-number="310" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L310" id="L310">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+310
+</a>
+<a class="diff-line-num" data-line-number="311" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L311" id="L311">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+311
+</a>
+<a class="diff-line-num" data-line-number="312" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L312" id="L312">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+312
+</a>
+<a class="diff-line-num" data-line-number="313" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L313" id="L313">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+313
+</a>
+<a class="diff-line-num" data-line-number="314" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L314" id="L314">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+314
+</a>
+<a class="diff-line-num" data-line-number="315" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L315" id="L315">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+315
+</a>
+<a class="diff-line-num" data-line-number="316" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L316" id="L316">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+316
+</a>
+<a class="diff-line-num" data-line-number="317" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L317" id="L317">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+317
+</a>
+<a class="diff-line-num" data-line-number="318" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L318" id="L318">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+318
+</a>
+<a class="diff-line-num" data-line-number="319" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L319" id="L319">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+319
+</a>
+<a class="diff-line-num" data-line-number="320" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L320" id="L320">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+320
+</a>
+<a class="diff-line-num" data-line-number="321" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L321" id="L321">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+321
+</a>
+<a class="diff-line-num" data-line-number="322" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L322" id="L322">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+322
+</a>
+<a class="diff-line-num" data-line-number="323" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L323" id="L323">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+323
+</a>
+<a class="diff-line-num" data-line-number="324" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L324" id="L324">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+324
+</a>
+<a class="diff-line-num" data-line-number="325" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L325" id="L325">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+325
+</a>
+<a class="diff-line-num" data-line-number="326" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L326" id="L326">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+326
+</a>
+<a class="diff-line-num" data-line-number="327" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L327" id="L327">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+327
+</a>
+<a class="diff-line-num" data-line-number="328" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L328" id="L328">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+328
+</a>
+<a class="diff-line-num" data-line-number="329" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L329" id="L329">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+329
+</a>
+<a class="diff-line-num" data-line-number="330" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L330" id="L330">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+330
+</a>
+<a class="diff-line-num" data-line-number="331" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L331" id="L331">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+331
+</a>
+<a class="diff-line-num" data-line-number="332" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L332" id="L332">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+332
+</a>
+<a class="diff-line-num" data-line-number="333" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L333" id="L333">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+333
+</a>
+<a class="diff-line-num" data-line-number="334" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L334" id="L334">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+334
+</a>
+<a class="diff-line-num" data-line-number="335" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L335" id="L335">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+335
+</a>
+<a class="diff-line-num" data-line-number="336" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L336" id="L336">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+336
+</a>
+<a class="diff-line-num" data-line-number="337" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L337" id="L337">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+337
+</a>
+<a class="diff-line-num" data-line-number="338" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L338" id="L338">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+338
+</a>
+<a class="diff-line-num" data-line-number="339" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L339" id="L339">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+339
+</a>
+<a class="diff-line-num" data-line-number="340" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L340" id="L340">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+340
+</a>
+<a class="diff-line-num" data-line-number="341" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L341" id="L341">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+341
+</a>
+<a class="diff-line-num" data-line-number="342" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L342" id="L342">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+342
+</a>
+<a class="diff-line-num" data-line-number="343" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L343" id="L343">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+343
+</a>
+<a class="diff-line-num" data-line-number="344" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L344" id="L344">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+344
+</a>
+<a class="diff-line-num" data-line-number="345" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L345" id="L345">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+345
+</a>
+<a class="diff-line-num" data-line-number="346" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L346" id="L346">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+346
+</a>
+<a class="diff-line-num" data-line-number="347" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L347" id="L347">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+347
+</a>
+<a class="diff-line-num" data-line-number="348" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L348" id="L348">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+348
+</a>
+<a class="diff-line-num" data-line-number="349" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L349" id="L349">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+349
+</a>
+<a class="diff-line-num" data-line-number="350" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L350" id="L350">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+350
+</a>
+<a class="diff-line-num" data-line-number="351" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L351" id="L351">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+351
+</a>
+<a class="diff-line-num" data-line-number="352" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L352" id="L352">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+352
+</a>
+<a class="diff-line-num" data-line-number="353" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L353" id="L353">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+353
+</a>
+<a class="diff-line-num" data-line-number="354" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L354" id="L354">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+354
+</a>
+<a class="diff-line-num" data-line-number="355" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L355" id="L355">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+355
+</a>
+<a class="diff-line-num" data-line-number="356" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L356" id="L356">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+356
+</a>
+<a class="diff-line-num" data-line-number="357" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L357" id="L357">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+357
+</a>
+<a class="diff-line-num" data-line-number="358" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L358" id="L358">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+358
+</a>
+<a class="diff-line-num" data-line-number="359" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L359" id="L359">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+359
+</a>
+<a class="diff-line-num" data-line-number="360" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L360" id="L360">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+360
+</a>
+<a class="diff-line-num" data-line-number="361" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L361" id="L361">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+361
+</a>
+<a class="diff-line-num" data-line-number="362" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L362" id="L362">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+362
+</a>
+<a class="diff-line-num" data-line-number="363" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L363" id="L363">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+363
+</a>
+<a class="diff-line-num" data-line-number="364" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L364" id="L364">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+364
+</a>
+<a class="diff-line-num" data-line-number="365" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L365" id="L365">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+365
+</a>
+<a class="diff-line-num" data-line-number="366" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L366" id="L366">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+366
+</a>
+<a class="diff-line-num" data-line-number="367" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L367" id="L367">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+367
+</a>
+<a class="diff-line-num" data-line-number="368" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L368" id="L368">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+368
+</a>
+<a class="diff-line-num" data-line-number="369" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L369" id="L369">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+369
+</a>
+<a class="diff-line-num" data-line-number="370" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L370" id="L370">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+370
+</a>
+<a class="diff-line-num" data-line-number="371" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L371" id="L371">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+371
+</a>
+<a class="diff-line-num" data-line-number="372" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L372" id="L372">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+372
+</a>
+<a class="diff-line-num" data-line-number="373" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L373" id="L373">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+373
+</a>
+<a class="diff-line-num" data-line-number="374" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L374" id="L374">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+374
+</a>
+<a class="diff-line-num" data-line-number="375" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L375" id="L375">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+375
+</a>
+<a class="diff-line-num" data-line-number="376" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L376" id="L376">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+376
+</a>
+<a class="diff-line-num" data-line-number="377" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L377" id="L377">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+377
+</a>
+<a class="diff-line-num" data-line-number="378" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L378" id="L378">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+378
+</a>
+<a class="diff-line-num" data-line-number="379" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L379" id="L379">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+379
+</a>
+<a class="diff-line-num" data-line-number="380" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L380" id="L380">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+380
+</a>
+<a class="diff-line-num" data-line-number="381" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L381" id="L381">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+381
+</a>
+<a class="diff-line-num" data-line-number="382" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L382" id="L382">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+382
+</a>
+<a class="diff-line-num" data-line-number="383" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L383" id="L383">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+383
+</a>
+<a class="diff-line-num" data-line-number="384" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L384" id="L384">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+384
+</a>
+<a class="diff-line-num" data-line-number="385" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L385" id="L385">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+385
+</a>
+<a class="diff-line-num" data-line-number="386" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L386" id="L386">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+386
+</a>
+<a class="diff-line-num" data-line-number="387" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L387" id="L387">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+387
+</a>
+<a class="diff-line-num" data-line-number="388" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L388" id="L388">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+388
+</a>
+<a class="diff-line-num" data-line-number="389" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L389" id="L389">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+389
+</a>
+<a class="diff-line-num" data-line-number="390" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L390" id="L390">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+390
+</a>
+<a class="diff-line-num" data-line-number="391" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L391" id="L391">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+391
+</a>
+<a class="diff-line-num" data-line-number="392" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L392" id="L392">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+392
+</a>
+<a class="diff-line-num" data-line-number="393" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L393" id="L393">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+393
+</a>
+<a class="diff-line-num" data-line-number="394" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L394" id="L394">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+394
+</a>
+<a class="diff-line-num" data-line-number="395" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L395" id="L395">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+395
+</a>
+<a class="diff-line-num" data-line-number="396" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L396" id="L396">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+396
+</a>
+<a class="diff-line-num" data-line-number="397" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L397" id="L397">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+397
+</a>
+<a class="diff-line-num" data-line-number="398" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L398" id="L398">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+398
+</a>
+<a class="diff-line-num" data-line-number="399" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L399" id="L399">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+399
+</a>
+<a class="diff-line-num" data-line-number="400" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L400" id="L400">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+400
+</a>
+<a class="diff-line-num" data-line-number="401" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L401" id="L401">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+401
+</a>
+<a class="diff-line-num" data-line-number="402" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L402" id="L402">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+402
+</a>
+<a class="diff-line-num" data-line-number="403" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L403" id="L403">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+403
+</a>
+<a class="diff-line-num" data-line-number="404" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L404" id="L404">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+404
+</a>
+<a class="diff-line-num" data-line-number="405" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L405" id="L405">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+405
+</a>
+<a class="diff-line-num" data-line-number="406" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L406" id="L406">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+406
+</a>
+<a class="diff-line-num" data-line-number="407" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L407" id="L407">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+407
+</a>
+<a class="diff-line-num" data-line-number="408" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L408" id="L408">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+408
+</a>
+<a class="diff-line-num" data-line-number="409" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L409" id="L409">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+409
+</a>
+<a class="diff-line-num" data-line-number="410" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L410" id="L410">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+410
+</a>
+<a class="diff-line-num" data-line-number="411" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L411" id="L411">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+411
+</a>
+<a class="diff-line-num" data-line-number="412" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L412" id="L412">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+412
+</a>
+<a class="diff-line-num" data-line-number="413" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L413" id="L413">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+413
+</a>
+<a class="diff-line-num" data-line-number="414" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L414" id="L414">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+414
+</a>
+<a class="diff-line-num" data-line-number="415" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L415" id="L415">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+415
+</a>
+<a class="diff-line-num" data-line-number="416" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L416" id="L416">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+416
+</a>
+<a class="diff-line-num" data-line-number="417" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L417" id="L417">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+417
+</a>
+<a class="diff-line-num" data-line-number="418" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L418" id="L418">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+418
+</a>
+<a class="diff-line-num" data-line-number="419" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L419" id="L419">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+419
+</a>
+<a class="diff-line-num" data-line-number="420" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L420" id="L420">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+420
+</a>
+<a class="diff-line-num" data-line-number="421" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L421" id="L421">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+421
+</a>
+<a class="diff-line-num" data-line-number="422" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L422" id="L422">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+422
+</a>
+<a class="diff-line-num" data-line-number="423" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L423" id="L423">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+423
+</a>
+<a class="diff-line-num" data-line-number="424" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L424" id="L424">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+424
+</a>
+<a class="diff-line-num" data-line-number="425" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L425" id="L425">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+425
+</a>
+<a class="diff-line-num" data-line-number="426" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L426" id="L426">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+426
+</a>
+<a class="diff-line-num" data-line-number="427" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L427" id="L427">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+427
+</a>
+<a class="diff-line-num" data-line-number="428" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L428" id="L428">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+428
+</a>
+<a class="diff-line-num" data-line-number="429" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L429" id="L429">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+429
+</a>
+<a class="diff-line-num" data-line-number="430" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L430" id="L430">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+430
+</a>
+<a class="diff-line-num" data-line-number="431" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L431" id="L431">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+431
+</a>
+<a class="diff-line-num" data-line-number="432" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L432" id="L432">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+432
+</a>
+<a class="diff-line-num" data-line-number="433" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L433" id="L433">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+433
+</a>
+<a class="diff-line-num" data-line-number="434" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L434" id="L434">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+434
+</a>
+<a class="diff-line-num" data-line-number="435" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L435" id="L435">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+435
+</a>
+<a class="diff-line-num" data-line-number="436" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L436" id="L436">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+436
+</a>
+<a class="diff-line-num" data-line-number="437" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L437" id="L437">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+437
+</a>
+<a class="diff-line-num" data-line-number="438" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L438" id="L438">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+438
+</a>
+<a class="diff-line-num" data-line-number="439" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L439" id="L439">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+439
+</a>
+<a class="diff-line-num" data-line-number="440" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L440" id="L440">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+440
+</a>
+<a class="diff-line-num" data-line-number="441" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L441" id="L441">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+441
+</a>
+<a class="diff-line-num" data-line-number="442" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L442" id="L442">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+442
+</a>
+<a class="diff-line-num" data-line-number="443" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L443" id="L443">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+443
+</a>
+<a class="diff-line-num" data-line-number="444" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L444" id="L444">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+444
+</a>
+<a class="diff-line-num" data-line-number="445" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L445" id="L445">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+445
+</a>
+<a class="diff-line-num" data-line-number="446" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L446" id="L446">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+446
+</a>
+<a class="diff-line-num" data-line-number="447" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L447" id="L447">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+447
+</a>
+<a class="diff-line-num" data-line-number="448" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L448" id="L448">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+448
+</a>
+<a class="diff-line-num" data-line-number="449" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L449" id="L449">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+449
+</a>
+<a class="diff-line-num" data-line-number="450" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L450" id="L450">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+450
+</a>
+<a class="diff-line-num" data-line-number="451" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L451" id="L451">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+451
+</a>
+<a class="diff-line-num" data-line-number="452" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L452" id="L452">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+452
+</a>
+<a class="diff-line-num" data-line-number="453" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L453" id="L453">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+453
+</a>
+<a class="diff-line-num" data-line-number="454" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L454" id="L454">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+454
+</a>
+<a class="diff-line-num" data-line-number="455" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L455" id="L455">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+455
+</a>
+<a class="diff-line-num" data-line-number="456" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L456" id="L456">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+456
+</a>
+<a class="diff-line-num" data-line-number="457" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L457" id="L457">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+457
+</a>
+<a class="diff-line-num" data-line-number="458" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L458" id="L458">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+458
+</a>
+<a class="diff-line-num" data-line-number="459" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L459" id="L459">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+459
+</a>
+<a class="diff-line-num" data-line-number="460" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L460" id="L460">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+460
+</a>
+<a class="diff-line-num" data-line-number="461" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L461" id="L461">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+461
+</a>
+<a class="diff-line-num" data-line-number="462" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L462" id="L462">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+462
+</a>
+<a class="diff-line-num" data-line-number="463" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L463" id="L463">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+463
+</a>
+<a class="diff-line-num" data-line-number="464" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L464" id="L464">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+464
+</a>
+<a class="diff-line-num" data-line-number="465" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L465" id="L465">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+465
+</a>
+<a class="diff-line-num" data-line-number="466" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L466" id="L466">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+466
+</a>
+<a class="diff-line-num" data-line-number="467" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L467" id="L467">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+467
+</a>
+<a class="diff-line-num" data-line-number="468" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L468" id="L468">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+468
+</a>
+<a class="diff-line-num" data-line-number="469" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L469" id="L469">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+469
+</a>
+<a class="diff-line-num" data-line-number="470" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#L470" id="L470">
+<i aria-hidden="true" data-hidden="true" class="fa fa-link"></i>
+470
+</a>
+</div>
+<div class="blob-content" data-blob-id="dc5e494e2a09317c2b0f0ec5fec62cea05b4d9a2">
+<pre class="code highlight"><code><span id="LC1" class="line" lang="plaintext">title: Mamut Gateway</span>
+<span id="LC2" class="line" lang="plaintext">version: 0.1.0</span>
+<span id="LC3" class="line" lang="plaintext"></span>
+<span id="LC4" class="line" lang="plaintext">apis:</span>
+<span id="LC5" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC6" class="line" lang="plaintext"># Mamut</span>
+<span id="LC7" class="line" lang="plaintext">#   Core service</span>
+<span id="LC8" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC9" class="line" lang="plaintext">  - name: mamut</span>
+<span id="LC10" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/health-svc/uri"}}"</span>
+<span id="LC11" class="line" lang="plaintext">    hosts:</span>
+<span id="LC12" class="line" lang="plaintext">      - {{getv "/gateway/apis/mamut/request_host"}}</span>
+<span id="LC13" class="line" lang="plaintext">    router:</span>
+<span id="LC14" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC15" class="line" lang="plaintext">      batch: true</span>
+<span id="LC16" class="line" lang="plaintext">      routes: |</span>
+<span id="LC17" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/batch.*)                             {{getv "/common/services/batch-svc/uri"}}/%1</span>
+<span id="LC18" class="line" lang="plaintext">        /(apps/[%w_]+/data.*)                                             {{getv "/common/services/customdata-svc/uri"}}/%1</span>
+<span id="LC19" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/data.*)                              {{getv "/common/services/customdata-svc/uri"}}/%1</span>
+<span id="LC20" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/tmpdata.*)                           {{getv "/common/services/tmpdata-svc/uri"}}/%1</span>
+<span id="LC21" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/messages.*)                          {{getv "/common/services/message-svc/uri"}}/%1</span>
+<span id="LC22" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/scores.*)                            {{getv "/common/services/score-svc/uri"}}/%1</span>
+<span id="LC23" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/leaderboards.*)                      {{getv "/common/services/score-svc/uri"}}/%1</span>
+<span id="LC24" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/lists.*)                             {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC25" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/devices.*)                           {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC26" class="line" lang="plaintext">        /(apps/[%w_]+/leaderboards.*)                                     {{getv "/common/services/score-svc/uri"}}/%1</span>
+<span id="LC27" class="line" lang="plaintext">        /(apps/[%w_]+/users)                                              {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC28" class="line" lang="plaintext">        /(apps/[%w_]+/messages.*)                                         {{getv "/common/services/message-svc/uri"}}/%1</span>
+<span id="LC29" class="line" lang="plaintext">        /(apps/[%w_]+/clans/[%w-_.]+/events.*)                            {{getv "/common/services/event-svc/uri"}}/%1</span>
+<span id="LC30" class="line" lang="plaintext">        /(apps/[%w_]+/clans/[%w-_.]+/messages.*)                          {{getv "/common/services/message-svc/uri"}}/%1</span>
+<span id="LC31" class="line" lang="plaintext">        /(apps/[%w_]+/clans/[%w-_.]+/users/messages.*)                    {{getv "/common/services/message-svc/uri"}}/%1</span>
+<span id="LC32" class="line" lang="plaintext">        /(apps/[%w_]+/clans/[%w-_.]+/counters.*)                          {{getv "/common/services/counter-svc/uri"}}/%1</span>
+<span id="LC33" class="line" lang="plaintext">        /(apps/[%w_]+/clans/[%w-_.]+/labeled[-]counters/[%w]+/counters.*) {{getv "/common/services/counter-svc/uri"}}/%1</span>
+<span id="LC34" class="line" lang="plaintext">        /(apps/[%w_]+/clans/[%w-_.]+/members/[%w-_.]+/counters.*)         {{getv "/common/services/counter-svc/uri"}}/%1</span>
+<span id="LC35" class="line" lang="plaintext">        /(apps/[%w_]+/clans.*)                                            {{getv "/common/services/clan-svc/uri"}}/%1</span>
+<span id="LC36" class="line" lang="plaintext">        /(apps/[%w_]+/events.*)                                           {{getv "/common/services/event-svc/uri"}}/%1</span>
+<span id="LC37" class="line" lang="plaintext">        /(apps/[%w_]+/leagues.*)                                          {{getv "/common/services/league-svc/uri"}}/%1</span>
+<span id="LC38" class="line" lang="plaintext">        /(apps/[%w_]+/seasons.*)                                          {{getv "/common/services/league-svc/uri"}}/%1</span>
+<span id="LC39" class="line" lang="plaintext">        /(apps/[%w_]+/league[-]groups.*)                                  {{getv "/common/services/league-svc/uri"}}/%1</span>
+<span id="LC40" class="line" lang="plaintext">        /(apps/[%w_]+/clients.*)                                          {{getv "/common/services/auth-svc/uri"}}/%1</span>
+<span id="LC41" class="line" lang="plaintext">        /(devices.*)                                                      {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC42" class="line" lang="plaintext">        /(health.*)                                                       {{getv "/common/services/health-svc/uri"}}/%1</span>
+<span id="LC43" class="line" lang="plaintext">        /(oauth.*)                                                        {{getv "/common/services/auth-svc/uri"}}/%1</span>
+<span id="LC44" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/clans.*)                             {{getv "/common/services/clan-svc/uri"}}/%1</span>
+<span id="LC45" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/details.*)                           {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC46" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/activate.*)                          {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC47" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/deactivate.*)                        {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC48" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/authorize.*)                         {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC49" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/deauthorize.*)                       {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC50" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/reset.*)                             {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC51" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/ban.*)                               {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC52" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/unban.*)                             {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC53" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/vendorusers.*)                       {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC54" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/userbases.*)                         {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC55" class="line" lang="plaintext">        /(apps/[%w_]+/users/[%w-_.]+/type.*)                              {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC56" class="line" lang="plaintext">        /(apps/[%w_]+/vendors/[%w_]+/deauthorize)                         {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC57" class="line" lang="plaintext">        /(apps/[%w_]+/vendors.*)                                          {{getv "/common/services/auth-svc/uri"}}/%1</span>
+<span id="LC58" class="line" lang="plaintext">        /(apps.*)                                                         {{getv "/common/services/app-svc/uri"}}/%1</span>
+<span id="LC59" class="line" lang="plaintext">        /(staff.*)                                                        {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC60" class="line" lang="plaintext">        /(banmodes.*)                                                     {{getv "/common/services/autoban-svc/uri"}}/%1</span>
+<span id="LC61" class="line" lang="plaintext">        /(actions.*)                                                      {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC62" class="line" lang="plaintext">        /(packages.*)                                                     {{getv "/common/services/payment-svc/uri"}}/%1</span>
+<span id="LC63" class="line" lang="plaintext">        /(orders.*)                                                       {{getv "/common/services/payment-svc/uri"}}/%1</span>
+<span id="LC64" class="line" lang="plaintext">        /(products.*)                                                     {{getv "/common/services/payment-svc/uri"}}/%1</span>
+<span id="LC65" class="line" lang="plaintext">        /(adtrackers/.*)                                                  {{getv "/common/services/adtracking-svc/uri"}}/%1</span>
+<span id="LC66" class="line" lang="plaintext">        /(flux/adtrackers/.*)                                             {{getv "/common/services/adtracking-svc/uri"}}/%1</span>
+<span id="LC67" class="line" lang="plaintext">        /(profanity/.*)                                                   {{getv "/common/services/profanity-svc/uri"}}/%1</span>
+<span id="LC68" class="line" lang="plaintext">        /dummy/(.*)                                                       {{getv "/common/services/dummy-svc/uri"}}/%1</span>
+<span id="LC69" class="line" lang="plaintext"></span>
+<span id="LC70" class="line" lang="plaintext">    auth:</span>
+<span id="LC71" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC72" class="line" lang="plaintext">      methods:</span>
+<span id="LC73" class="line" lang="plaintext">        - credentials: flux-jwt</span>
+<span id="LC74" class="line" lang="plaintext">          claims_to_verify:</span>
+<span id="LC75" class="line" lang="plaintext">            - exp</span>
+<span id="LC76" class="line" lang="plaintext">          uri_param_names:</span>
+<span id="LC77" class="line" lang="plaintext">            - _auth</span>
+<span id="LC78" class="line" lang="plaintext">          url_whitelist:</span>
+<span id="LC79" class="line" lang="plaintext">            - ^/health</span>
+<span id="LC80" class="line" lang="plaintext">            - ^/oauth</span>
+<span id="LC81" class="line" lang="plaintext">            - ^/crossdomain.xml</span>
+<span id="LC82" class="line" lang="plaintext">            - ^/dummy</span>
+<span id="LC83" class="line" lang="plaintext">            - ^/flux/adtracker</span>
+<span id="LC84" class="line" lang="plaintext">            - ^/adtrackers/adwords</span>
+<span id="LC85" class="line" lang="plaintext"></span>
+<span id="LC86" class="line" lang="plaintext">    transform:</span>
+<span id="LC87" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC88" class="line" lang="plaintext">      flash: true</span>
+<span id="LC89" class="line" lang="plaintext"></span>
+<span id="LC90" class="line" lang="plaintext">    cors:</span>
+<span id="LC91" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC92" class="line" lang="plaintext">      origin:</span>
+<span id="LC93" class="line" lang="plaintext">        - "*"</span>
+<span id="LC94" class="line" lang="plaintext">      methods:</span>
+<span id="LC95" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC96" class="line" lang="plaintext">        - GET</span>
+<span id="LC97" class="line" lang="plaintext">        - POST</span>
+<span id="LC98" class="line" lang="plaintext">        - PUT</span>
+<span id="LC99" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC100" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC101" class="line" lang="plaintext">      headers:</span>
+<span id="LC102" class="line" lang="plaintext">        - x-game-version</span>
+<span id="LC103" class="line" lang="plaintext">        - x-request-id</span>
+<span id="LC104" class="line" lang="plaintext">        - content-type</span>
+<span id="LC105" class="line" lang="plaintext">        - authorization</span>
+<span id="LC106" class="line" lang="plaintext">      exposed_headers:</span>
+<span id="LC107" class="line" lang="plaintext">        - x-gateway-version</span>
+<span id="LC108" class="line" lang="plaintext">        - date</span>
+<span id="LC109" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC110" class="line" lang="plaintext"></span>
+<span id="LC111" class="line" lang="plaintext"></span>
+<span id="LC112" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC113" class="line" lang="plaintext"># Mamut Panel</span>
+<span id="LC114" class="line" lang="plaintext">#   Management panel for Mamut. Previously known as 'Flux Console'</span>
+<span id="LC115" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC116" class="line" lang="plaintext"></span>
+<span id="LC117" class="line" lang="plaintext">  - name: mamut-panel</span>
+<span id="LC118" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/panel-svc/uri"}}"</span>
+<span id="LC119" class="line" lang="plaintext">    hosts:{{ range split (getv "/gateway/apis/mamut-panel/request_host") "," }}</span>
+<span id="LC120" class="line" lang="plaintext">      - {{.}}{{end}}</span>
+<span id="LC121" class="line" lang="plaintext">    router:</span>
+<span id="LC122" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC123" class="line" lang="plaintext">      batch: false</span>
+<span id="LC124" class="line" lang="plaintext">      routes: |</span>
+<span id="LC125" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/panel-svc/uri"}}/%1</span>
+<span id="LC126" class="line" lang="plaintext"></span>
+<span id="LC127" class="line" lang="plaintext"></span>
+<span id="LC128" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC129" class="line" lang="plaintext"># Promo Service</span>
+<span id="LC130" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC131" class="line" lang="plaintext"></span>
+<span id="LC132" class="line" lang="plaintext">  - name: promo</span>
+<span id="LC133" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/promo-svc/uri"}}"</span>
+<span id="LC134" class="line" lang="plaintext">    hosts:</span>
+<span id="LC135" class="line" lang="plaintext">      - {{getv "/gateway/apis/promo/request_host"}}</span>
+<span id="LC136" class="line" lang="plaintext">    router:</span>
+<span id="LC137" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC138" class="line" lang="plaintext">      batch: false</span>
+<span id="LC139" class="line" lang="plaintext">      routes: |</span>
+<span id="LC140" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/promo-svc/uri"}}/%1</span>
+<span id="LC141" class="line" lang="plaintext"></span>
+<span id="LC142" class="line" lang="plaintext"></span>
+<span id="LC143" class="line" lang="plaintext"></span>
+<span id="LC144" class="line" lang="plaintext"></span>
+<span id="LC145" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC146" class="line" lang="plaintext"># Support Service</span>
+<span id="LC147" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC148" class="line" lang="plaintext"></span>
+<span id="LC149" class="line" lang="plaintext">  - name: support</span>
+<span id="LC150" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/support-svc/uri"}}"</span>
+<span id="LC151" class="line" lang="plaintext">    hosts:</span>
+<span id="LC152" class="line" lang="plaintext">      - {{getv "/gateway/apis/support/request_host"}}</span>
+<span id="LC153" class="line" lang="plaintext">    router:</span>
+<span id="LC154" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC155" class="line" lang="plaintext">      batch: false</span>
+<span id="LC156" class="line" lang="plaintext">      routes: |</span>
+<span id="LC157" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/support-svc/uri"}}/%1</span>
+<span id="LC158" class="line" lang="plaintext"></span>
+<span id="LC159" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC160" class="line" lang="plaintext"># Broker Service</span>
+<span id="LC161" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC162" class="line" lang="plaintext"></span>
+<span id="LC163" class="line" lang="plaintext">  - name: broker</span>
+<span id="LC164" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/broker-svc/uri"}}"</span>
+<span id="LC165" class="line" lang="plaintext">    preserve_host: true</span>
+<span id="LC166" class="line" lang="plaintext">    hosts:</span>
+<span id="LC167" class="line" lang="plaintext">      - {{getv "/gateway/apis/broker/request_host"}}</span>
+<span id="LC168" class="line" lang="plaintext">      - {{getv "/gateway/apis/broker/flux_request_host"}}</span>
+<span id="LC169" class="line" lang="plaintext">    router:</span>
+<span id="LC170" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC171" class="line" lang="plaintext">      batch: false</span>
+<span id="LC172" class="line" lang="plaintext">      routes: |</span>
+<span id="LC173" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/broker-svc/uri"}}/%1</span>
+<span id="LC174" class="line" lang="plaintext">    cors:</span>
+<span id="LC175" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC176" class="line" lang="plaintext">      origin:</span>
+<span id="LC177" class="line" lang="plaintext">        - "*"</span>
+<span id="LC178" class="line" lang="plaintext">      methods:</span>
+<span id="LC179" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC180" class="line" lang="plaintext">        - GET</span>
+<span id="LC181" class="line" lang="plaintext">        - POST</span>
+<span id="LC182" class="line" lang="plaintext">        - PUT</span>
+<span id="LC183" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC184" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC185" class="line" lang="plaintext">      headers:</span>
+<span id="LC186" class="line" lang="plaintext">        - Content-Type</span>
+<span id="LC187" class="line" lang="plaintext">        - Authorization</span>
+<span id="LC188" class="line" lang="plaintext">      exposeHeaders:</span>
+<span id="LC189" class="line" lang="plaintext">        - Date</span>
+<span id="LC190" class="line" lang="plaintext">        - X-Gateway-Version</span>
+<span id="LC191" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC192" class="line" lang="plaintext">        - X-Total-Count</span>
+<span id="LC193" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC194" class="line" lang="plaintext"></span>
+<span id="LC195" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC196" class="line" lang="plaintext"># Web (www and landing) Pages</span>
+<span id="LC197" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC198" class="line" lang="plaintext"></span>
+<span id="LC199" class="line" lang="plaintext">  - name: web</span>
+<span id="LC200" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/health-svc/uri"}}"</span>
+<span id="LC201" class="line" lang="plaintext">    preserve_host: true</span>
+<span id="LC202" class="line" lang="plaintext">    hosts:</span>
+<span id="LC203" class="line" lang="plaintext">      - {{getv "/gateway/apis/web/request_host"}}</span>
+<span id="LC204" class="line" lang="plaintext">    router:</span>
+<span id="LC205" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC206" class="line" lang="plaintext">      batch: false</span>
+<span id="LC207" class="line" lang="plaintext">      routes: |</span>
+<span id="LC208" class="line" lang="plaintext">        /magicdrops%-landing/(.*)       {{getv "/common/services/magicdrops-landing/uri"}}/%1</span>
+<span id="LC209" class="line" lang="plaintext">        /cookingtale%-landing/(.*)      {{getv "/common/services/cookingtale-landing/uri"}}/%1</span>
+<span id="LC210" class="line" lang="plaintext">    cors:</span>
+<span id="LC211" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC212" class="line" lang="plaintext">      origin:</span>
+<span id="LC213" class="line" lang="plaintext">        - "*"</span>
+<span id="LC214" class="line" lang="plaintext">      methods:</span>
+<span id="LC215" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC216" class="line" lang="plaintext">        - GET</span>
+<span id="LC217" class="line" lang="plaintext">        - POST</span>
+<span id="LC218" class="line" lang="plaintext">        - PUT</span>
+<span id="LC219" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC220" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC221" class="line" lang="plaintext">      headers:</span>
+<span id="LC222" class="line" lang="plaintext">        - Content-Type</span>
+<span id="LC223" class="line" lang="plaintext">        - Authorization</span>
+<span id="LC224" class="line" lang="plaintext">      exposeHeaders:</span>
+<span id="LC225" class="line" lang="plaintext">        - Date</span>
+<span id="LC226" class="line" lang="plaintext">        - X-Gateway-Version</span>
+<span id="LC227" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC228" class="line" lang="plaintext">        - X-Total-Count</span>
+<span id="LC229" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC230" class="line" lang="plaintext"></span>
+<span id="LC231" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC232" class="line" lang="plaintext"># Report Service</span>
+<span id="LC233" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC234" class="line" lang="plaintext"></span>
+<span id="LC235" class="line" lang="plaintext">  - name: report</span>
+<span id="LC236" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/report-svc/uri"}}"</span>
+<span id="LC237" class="line" lang="plaintext">    hosts:</span>
+<span id="LC238" class="line" lang="plaintext">      - {{getv "/gateway/apis/report/request_host"}}</span>
+<span id="LC239" class="line" lang="plaintext">    router:</span>
+<span id="LC240" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC241" class="line" lang="plaintext">      batch: true</span>
+<span id="LC242" class="line" lang="plaintext">      routes: |</span>
+<span id="LC243" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/report-svc/uri"}}/%1</span>
+<span id="LC244" class="line" lang="plaintext">    cors:</span>
+<span id="LC245" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC246" class="line" lang="plaintext">      origin:</span>
+<span id="LC247" class="line" lang="plaintext">        - "*"</span>
+<span id="LC248" class="line" lang="plaintext">      methods:</span>
+<span id="LC249" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC250" class="line" lang="plaintext">        - GET</span>
+<span id="LC251" class="line" lang="plaintext">        - POST</span>
+<span id="LC252" class="line" lang="plaintext">        - PUT</span>
+<span id="LC253" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC254" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC255" class="line" lang="plaintext">      headers:</span>
+<span id="LC256" class="line" lang="plaintext">        - Content-Type</span>
+<span id="LC257" class="line" lang="plaintext">        - Authorization</span>
+<span id="LC258" class="line" lang="plaintext">      exposeHeaders:</span>
+<span id="LC259" class="line" lang="plaintext">        - Date</span>
+<span id="LC260" class="line" lang="plaintext">        - X-Gateway-Version</span>
+<span id="LC261" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC262" class="line" lang="plaintext">        - X-Total-Count</span>
+<span id="LC263" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC264" class="line" lang="plaintext"></span>
+<span id="LC265" class="line" lang="plaintext"></span>
+<span id="LC266" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC267" class="line" lang="plaintext"># Analytics Service</span>
+<span id="LC268" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC269" class="line" lang="plaintext"></span>
+<span id="LC270" class="line" lang="plaintext">  - name: analytics</span>
+<span id="LC271" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/log-collector-svc/uri"}}"</span>
+<span id="LC272" class="line" lang="plaintext">    hosts:</span>
+<span id="LC273" class="line" lang="plaintext">      - {{getv "/gateway/apis/analytics/request_host"}}</span>
+<span id="LC274" class="line" lang="plaintext">    router:</span>
+<span id="LC275" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC276" class="line" lang="plaintext">      batch: true</span>
+<span id="LC277" class="line" lang="plaintext">      routes: |</span>
+<span id="LC278" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/log-collector-svc/uri"}}/%1</span>
+<span id="LC279" class="line" lang="plaintext">    cors:</span>
+<span id="LC280" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC281" class="line" lang="plaintext">      origin:</span>
+<span id="LC282" class="line" lang="plaintext">        - "*"</span>
+<span id="LC283" class="line" lang="plaintext">      methods:</span>
+<span id="LC284" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC285" class="line" lang="plaintext">        - GET</span>
+<span id="LC286" class="line" lang="plaintext">        - POST</span>
+<span id="LC287" class="line" lang="plaintext">        - PUT</span>
+<span id="LC288" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC289" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC290" class="line" lang="plaintext">      headers:</span>
+<span id="LC291" class="line" lang="plaintext">        - Content-Type</span>
+<span id="LC292" class="line" lang="plaintext">        - Authorization</span>
+<span id="LC293" class="line" lang="plaintext">      exposeHeaders:</span>
+<span id="LC294" class="line" lang="plaintext">        - Date</span>
+<span id="LC295" class="line" lang="plaintext">        - X-Gateway-Version</span>
+<span id="LC296" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC297" class="line" lang="plaintext">        - X-Total-Count</span>
+<span id="LC298" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC299" class="line" lang="plaintext"></span>
+<span id="LC300" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC301" class="line" lang="plaintext"># Payment Service</span>
+<span id="LC302" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC303" class="line" lang="plaintext"></span>
+<span id="LC304" class="line" lang="plaintext">  - name: payment</span>
+<span id="LC305" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/payment-svc/uri"}}"</span>
+<span id="LC306" class="line" lang="plaintext">    hosts:</span>
+<span id="LC307" class="line" lang="plaintext">      - {{getv "/gateway/apis/payment/request_host"}}</span>
+<span id="LC308" class="line" lang="plaintext">      - {{getv "/gateway/apis/payment/request_host_2"}}</span>
+<span id="LC309" class="line" lang="plaintext">    router:</span>
+<span id="LC310" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC311" class="line" lang="plaintext">      batch: true</span>
+<span id="LC312" class="line" lang="plaintext">      routes: |</span>
+<span id="LC313" class="line" lang="plaintext">        /(.*)         {{getv "/common/services/payment-svc/uri"}}/%1</span>
+<span id="LC314" class="line" lang="plaintext">    auth:</span>
+<span id="LC315" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC316" class="line" lang="plaintext">      methods:</span>
+<span id="LC317" class="line" lang="plaintext">        - credentials: flux-jwt</span>
+<span id="LC318" class="line" lang="plaintext">          claims_to_verify:</span>
+<span id="LC319" class="line" lang="plaintext">            - exp</span>
+<span id="LC320" class="line" lang="plaintext">          uri_param_names:</span>
+<span id="LC321" class="line" lang="plaintext">            - _auth</span>
+<span id="LC322" class="line" lang="plaintext">          url_whitelist:</span>
+<span id="LC323" class="line" lang="plaintext">            - ^/crossdomain.xml</span>
+<span id="LC324" class="line" lang="plaintext">            - ^/health</span>
+<span id="LC325" class="line" lang="plaintext">    cors:</span>
+<span id="LC326" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC327" class="line" lang="plaintext">      origin:</span>
+<span id="LC328" class="line" lang="plaintext">        - "*"</span>
+<span id="LC329" class="line" lang="plaintext">      methods:</span>
+<span id="LC330" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC331" class="line" lang="plaintext">        - GET</span>
+<span id="LC332" class="line" lang="plaintext">        - POST</span>
+<span id="LC333" class="line" lang="plaintext">        - PUT</span>
+<span id="LC334" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC335" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC336" class="line" lang="plaintext">      headers:</span>
+<span id="LC337" class="line" lang="plaintext">        - Content-Type</span>
+<span id="LC338" class="line" lang="plaintext">        - Authorization</span>
+<span id="LC339" class="line" lang="plaintext">      exposeHeaders:</span>
+<span id="LC340" class="line" lang="plaintext">        - Date</span>
+<span id="LC341" class="line" lang="plaintext">        - X-Gateway-Version</span>
+<span id="LC342" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC343" class="line" lang="plaintext">        - X-Total-Count</span>
+<span id="LC344" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC345" class="line" lang="plaintext"></span>
+<span id="LC346" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC347" class="line" lang="plaintext"># Mamut Internal Beta</span>
+<span id="LC348" class="line" lang="plaintext">#   Direct access to services for development and debugging</span>
+<span id="LC349" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC350" class="line" lang="plaintext"></span>
+<span id="LC351" class="line" lang="plaintext">  - name: mamut-internal</span>
+<span id="LC352" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/health-svc/uri"}}"</span>
+<span id="LC353" class="line" lang="plaintext">    hosts:</span>
+<span id="LC354" class="line" lang="plaintext">      - {{getv "/gateway/apis/mamut-internal/request_host"}}</span>
+<span id="LC355" class="line" lang="plaintext">    router:</span>
+<span id="LC356" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC357" class="line" lang="plaintext">      batch: false</span>
+<span id="LC358" class="line" lang="plaintext">      routes: |</span>
+<span id="LC359" class="line" lang="plaintext">        /app%-svc/(.*)                 {{getv "/common/services/app-svc/uri"}}/%1</span>
+<span id="LC360" class="line" lang="plaintext">        /auth%-svc/(.*)                {{getv "/common/services/auth-svc/uri"}}/%1</span>
+<span id="LC361" class="line" lang="plaintext">        /batch%-svc/(.*)               {{getv "/common/services/batch-svc/uri"}}/%1</span>
+<span id="LC362" class="line" lang="plaintext">        /broker%-svc/(.*)              {{getv "/common/services/broker-svc/uri"}}/%1</span>
+<span id="LC363" class="line" lang="plaintext">        /customdata%-svc/(.*)          {{getv "/common/services/customdata-svc/uri"}}/%1</span>
+<span id="LC364" class="line" lang="plaintext">        /dummy%-svc/(.*)               {{getv "/common/services/dummy-svc/uri"}}/%1</span>
+<span id="LC365" class="line" lang="plaintext">        /health%-svc/(.*)              {{getv "/common/services/health-svc/uri"}}/%1</span>
+<span id="LC366" class="line" lang="plaintext">        /message%-svc/(.*)             {{getv "/common/services/message-svc/uri"}}/%1</span>
+<span id="LC367" class="line" lang="plaintext">        /payment%-svc/(.*)             {{getv "/common/services/payment-svc/uri"}}/%1</span>
+<span id="LC368" class="line" lang="plaintext">        /score%-svc/(.*)               {{getv "/common/services/score-svc/uri"}}/%1</span>
+<span id="LC369" class="line" lang="plaintext">        /tmpdata%-svc/(.*)             {{getv "/common/services/tmpdata-svc/uri"}}/%1</span>
+<span id="LC370" class="line" lang="plaintext">        /user%-svc/(.*)                {{getv "/common/services/user-svc/uri"}}/%1</span>
+<span id="LC371" class="line" lang="plaintext">        /panel%-svc/(.*)               {{getv "/common/services/panel-svc/uri"}}/%1</span>
+<span id="LC372" class="line" lang="plaintext">        /clan%-svc/(.*)                {{getv "/common/services/clan-svc/uri"}}/%1</span>
+<span id="LC373" class="line" lang="plaintext">        /event%-svc/(.*)               {{getv "/common/services/event-svc/uri"}}/%1</span>
+<span id="LC374" class="line" lang="plaintext">        /promo%-svc/(.*)               {{getv "/common/services/promo-svc/uri"}}/%1</span>
+<span id="LC375" class="line" lang="plaintext">        /counter%-svc/(.*)             {{getv "/common/services/counter-svc/uri"}}/%1</span>
+<span id="LC376" class="line" lang="plaintext">        /adtracking%-svc/(.*)          {{getv "/common/services/adtracking-svc/uri"}}/%1</span>
+<span id="LC377" class="line" lang="plaintext">        /profanity%-svc/(.*)           {{getv "/common/services/profanity-svc/uri"}}/%1</span>
+<span id="LC378" class="line" lang="plaintext">        /league%-svc/(.*)              {{getv "/common/services/league-svc/uri"}}/%1</span>
+<span id="LC379" class="line" lang="plaintext">        /report%-svc/(.*)              {{getv "/common/services/report-svc/uri"}}/%1</span>
+<span id="LC380" class="line" lang="plaintext">        /log%-collector%-svc/(.*)      {{getv "/common/services/log-collector-svc/uri"}}/%1</span>
+<span id="LC381" class="line" lang="plaintext">        /support%-svc/(.*)             {{getv "/common/services/support-svc/uri"}}/%1</span>
+<span id="LC382" class="line" lang="plaintext">        /metric%-collector%-mng/(.*)   {{getv "/common/services/metric-collector-mng/uri"}}/%1</span>
+<span id="LC383" class="line" lang="plaintext">        /phpmyadmin/(.*)               {{getv "/common/services/phpmyadmin/uri"}}/%1</span>
+<span id="LC384" class="line" lang="plaintext">        /magicdrops%-landing/(.*)      {{getv "/common/services/magicdrops-landing/uri"}}/%1</span>
+<span id="LC385" class="line" lang="plaintext">        /cookingtale%-landing/(.*)     {{getv "/common/services/cookingtale-landing/uri"}}/%1</span>
+<span id="LC386" class="line" lang="plaintext">        /league%-mng%-cal/(.*)         {{getv "/common/services/league-mng-cal/uri"}}/%1</span>
+<span id="LC387" class="line" lang="plaintext">        /autoban%-svc/(.*)             {{getv "/common/services/autoban-svc/uri"}}/%1</span>
+<span id="LC388" class="line" lang="plaintext">        /exchange%-rate%-svc/(.*)      {{getv "/common/services/exchange-rate-svc/uri"}}/%1</span>
+<span id="LC389" class="line" lang="plaintext">        /docs%-svc/(.*)                {{getv "/common/services/docs-svc/uri"}}/%1</span>
+<span id="LC390" class="line" lang="plaintext"></span>
+<span id="LC391" class="line" lang="plaintext">    auth:</span>
+<span id="LC392" class="line" lang="plaintext">      enabled: false</span>
+<span id="LC393" class="line" lang="plaintext">      methods:</span>
+<span id="LC394" class="line" lang="plaintext">        - credentials:</span>
+<span id="LC395" class="line" lang="plaintext">            - mamut-internal-beta-key</span>
+<span id="LC396" class="line" lang="plaintext"></span>
+<span id="LC397" class="line" lang="plaintext">    cors:</span>
+<span id="LC398" class="line" lang="plaintext">      enabled: true</span>
+<span id="LC399" class="line" lang="plaintext">      origin:</span>
+<span id="LC400" class="line" lang="plaintext">        - "*"</span>
+<span id="LC401" class="line" lang="plaintext">      methods:</span>
+<span id="LC402" class="line" lang="plaintext">        - HEAD</span>
+<span id="LC403" class="line" lang="plaintext">        - GET</span>
+<span id="LC404" class="line" lang="plaintext">        - POST</span>
+<span id="LC405" class="line" lang="plaintext">        - PUT</span>
+<span id="LC406" class="line" lang="plaintext">        - PATCH</span>
+<span id="LC407" class="line" lang="plaintext">        - DELETE</span>
+<span id="LC408" class="line" lang="plaintext">      headers:</span>
+<span id="LC409" class="line" lang="plaintext">        - X-Game-Version</span>
+<span id="LC410" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC411" class="line" lang="plaintext">        - Content-Type</span>
+<span id="LC412" class="line" lang="plaintext">        - Authorization</span>
+<span id="LC413" class="line" lang="plaintext">        - X-Retry</span>
+<span id="LC414" class="line" lang="plaintext">      exposeHeaders:</span>
+<span id="LC415" class="line" lang="plaintext">        - X-Gateway-Version</span>
+<span id="LC416" class="line" lang="plaintext">        - X-Request-ID</span>
+<span id="LC417" class="line" lang="plaintext">        - Date</span>
+<span id="LC418" class="line" lang="plaintext">      credentials: false</span>
+<span id="LC419" class="line" lang="plaintext"></span>
+<span id="LC420" class="line" lang="plaintext"></span>
+<span id="LC421" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC422" class="line" lang="plaintext"># CMS: Manor Cafe</span>
+<span id="LC423" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC424" class="line" lang="plaintext"></span>
+<span id="LC425" class="line" lang="plaintext">  - name: manor-cafe-cms</span>
+<span id="LC426" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/manor-cafe-cms/uri"}}"</span>
+<span id="LC427" class="line" lang="plaintext">    hosts:</span>
+<span id="LC428" class="line" lang="plaintext">      - {{getv "/gateway/apis/manor-cafe-cms/request_host"}}</span>
+<span id="LC429" class="line" lang="plaintext"></span>
+<span id="LC430" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC431" class="line" lang="plaintext"># CMS: Puzzle Cafe</span>
+<span id="LC432" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC433" class="line" lang="plaintext"></span>
+<span id="LC434" class="line" lang="plaintext">  - name: puzzlecafe-cms</span>
+<span id="LC435" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/puzzlecafe-cms/uri"}}"</span>
+<span id="LC436" class="line" lang="plaintext">    hosts:</span>
+<span id="LC437" class="line" lang="plaintext">      - {{getv "/gateway/apis/puzzlecafe-cms/request_host"}}</span>
+<span id="LC438" class="line" lang="plaintext"></span>
+<span id="LC439" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC440" class="line" lang="plaintext"># Unity Cloud Build</span>
+<span id="LC441" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC442" class="line" lang="plaintext"></span>
+<span id="LC443" class="line" lang="plaintext">  - name: unity-cloud-svc</span>
+<span id="LC444" class="line" lang="plaintext">    upstream_url: "{{getv "/common/services/unity-cloud-svc/uri"}}"</span>
+<span id="LC445" class="line" lang="plaintext">    hosts:</span>
+<span id="LC446" class="line" lang="plaintext">      - {{getv "/gateway/apis/unity-cloud/request_host"}}</span>
+<span id="LC447" class="line" lang="plaintext"></span>
+<span id="LC448" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC449" class="line" lang="plaintext"># credentials</span>
+<span id="LC450" class="line" lang="plaintext"># ------------------------------------------------------------------------------</span>
+<span id="LC451" class="line" lang="plaintext">{{$publicKey := getv "/auth-svc/keys/publicKey"}}</span>
+<span id="LC452" class="line" lang="plaintext">credentials:</span>
+<span id="LC453" class="line" lang="plaintext">  - id: flux-jwt</span>
+<span id="LC454" class="line" lang="plaintext">    key: {{getv "/auth-svc/keys/credentialKey"}}</span>
+<span id="LC455" class="line" lang="plaintext">    type: jwt</span>
+<span id="LC456" class="line" lang="plaintext">    rsa_public_key: "{{replace $publicKey "\n" "\\n" -1}}"</span>
+<span id="LC457" class="line" lang="plaintext">    algorithm: RS256</span>
+<span id="LC458" class="line" lang="plaintext">    secret: {{getv "/auth-svc/keys/secret"}}</span>
+<span id="LC459" class="line" lang="plaintext"></span>
+<span id="LC460" class="line" lang="plaintext">  - id: flux-mac</span>
+<span id="LC461" class="line" lang="plaintext">    key: {{getv "/auth-svc/keys/credentialKey"}}</span>
+<span id="LC462" class="line" lang="plaintext">    type: mac</span>
+<span id="LC463" class="line" lang="plaintext">    rsa_public_key: "{{replace $publicKey "\n" "\\n" -1}}"</span>
+<span id="LC464" class="line" lang="plaintext">    algorithm: RS256</span>
+<span id="LC465" class="line" lang="plaintext">    secret: {{getv "/auth-svc/keys/secret"}}</span>
+<span id="LC466" class="line" lang="plaintext">    as_rs_key: {{getv "/auth-svc/keys/asRSKey"}}</span>
+<span id="LC467" class="line" lang="plaintext"></span>
+<span id="LC468" class="line" lang="plaintext">  - id: mamut-internal-beta-key</span>
+<span id="LC469" class="line" lang="plaintext">    type: secret-key</span>
+<span id="LC470" class="line" lang="plaintext">    secret: 8d9a9626c94f4b52a6c91ca84f126634</span></code></pre>
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+</article>
+</div>
+
+<div class="modal" id="modal-remove-blob">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="page-title">Delete config.yml.tmpl</h3>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<form class="js-delete-blob-form js-quick-submit js-requires-input" action="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="delete"><input type="hidden" name="authenticity_token" value="zbyXFPhdXjx1pqGk65nuAIJp22WQ7RIAUJc+XKav//IeUW/bGjh80vRpd8o65MtouRgvjjvsJ/0/bFg7izlyOQ=="><div class="form-group row commit_message-group">
+<label class="col-form-label col-sm-2" for="commit_message-62648df15b710191d44d5c726be73464">Commit message
+</label><div class="col-sm-10">
+<div class="commit-message-container">
+<div class="max-width-marker"></div>
+<textarea name="commit_message" id="commit_message-62648df15b710191d44d5c726be73464" class="form-control js-commit-message" placeholder="Delete config.yml.tmpl" required="required" rows="3">Delete config.yml.tmpl</textarea>
+</div>
+</div>
+</div>
+
+<div class="form-group row branch">
+<label class="col-form-label col-sm-2" for="branch_name">Target Branch</label>
+<div class="col-sm-10">
+<input type="text" name="branch_name" id="branch_name" value="master" required="required" class="form-control js-branch-name ref-name">
+<div class="js-create-merge-request-container" style="display: none;">
+<div class="form-check prepend-top-8">
+<input type="checkbox" name="create_merge_request" id="create_merge_request-6744151c495ce054e743704b2a2247f4" value="1" class="js-create-merge-request form-check-input" checked="checked">
+<label class="form-check-label" for="create_merge_request-6744151c495ce054e743704b2a2247f4">Start a <strong>new merge request</strong> with these changes
+</label></div>
+
+</div>
+</div>
+</div>
+<input type="hidden" name="original_branch" id="original_branch" value="master" class="js-original-branch">
+
+<div class="form-group row">
+<div class="offset-sm-2 col-sm-10">
+<button name="button" type="submit" class="btn btn-remove btn-remove-file">Delete file</button>
+<a class="btn btn-cancel" data-dismiss="modal" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#">Cancel</a>
+</div>
+</div>
+</form></div>
+</div>
+</div>
+</div>
+
+<div class="modal" id="modal-upload-blob">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="page-title">Replace config.yml.tmpl</h3>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<form class="js-quick-submit js-upload-blob-form" data-method="put" action="https://git.fixb.com/mamut/gateway/update/master/confd/templates/config.yml.tmpl" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="zbyXFPhdXjx1pqGk65nuAIJp22WQ7RIAUJc+XKav//IeUW/bGjh80vRpd8o65MtouRgvjjvsJ/0/bFg7izlyOQ=="><div class="dropzone dz-clickable">
+<div class="dropzone-previews blob-upload-dropzone-previews">
+<p class="dz-message light">
+Attach a file by drag &amp; drop or <a class="markdown-selector" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#">click to upload</a>
+</p>
+</div>
+</div>
+<br>
+<div class="dropzone-alerts alert alert-danger data" style="display:none"></div>
+<div class="form-group row commit_message-group">
+<label class="col-form-label col-sm-2" for="commit_message-68407782b477dddecc7a54c644bbad9e">Commit message
+</label><div class="col-sm-10">
+<div class="commit-message-container">
+<div class="max-width-marker"></div>
+<textarea name="commit_message" id="commit_message-68407782b477dddecc7a54c644bbad9e" class="form-control js-commit-message" placeholder="Replace config.yml.tmpl" required="required" rows="3">Replace config.yml.tmpl</textarea>
+</div>
+</div>
+</div>
+
+<div class="form-group row branch">
+<label class="col-form-label col-sm-2" for="branch_name">Target Branch</label>
+<div class="col-sm-10">
+<input type="text" name="branch_name" id="branch_name" value="master" required="required" class="form-control js-branch-name ref-name">
+<div class="js-create-merge-request-container" style="display: none;">
+<div class="form-check prepend-top-8">
+<input type="checkbox" name="create_merge_request" id="create_merge_request-f35aa7aa741f26757e101f7a39b6b3c2" value="1" class="js-create-merge-request form-check-input" checked="checked">
+<label class="form-check-label" for="create_merge_request-f35aa7aa741f26757e101f7a39b6b3c2">Start a <strong>new merge request</strong> with these changes
+</label></div>
+
+</div>
+</div>
+</div>
+<input type="hidden" name="original_branch" id="original_branch" value="master" class="js-original-branch">
+
+<div class="form-actions">
+<button name="button" type="button" class="btn btn-create btn-upload-file" id="submit-all"><i aria-hidden="true" data-hidden="true" class="fa fa-spin fa-spinner js-loading-icon hidden"></i>
+Replace file
+</button><a class="btn btn-cancel" data-dismiss="modal" href="https://git.fixb.com/mamut/gateway/blob/master/confd/templates/config.yml.tmpl#">Cancel</a>
+
+</div>
+</form></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<input type="file" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;"></body></html>

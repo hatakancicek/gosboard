@@ -13,6 +13,10 @@ export default [{
       links: {
         Gamegos: "http://www.gamegos.com/games/",
       },
+    }, {
+      id: "Office",
+      color: '#81C784',
+      description: "Our office.",
     },{
       id: "Kubernetes Pods",
       description: "For greater scalibility, we use Kubernetes on EC2 to serve our micro-services. "
@@ -153,7 +157,7 @@ export default [{
         ],
       },
     }, {
-      id: "Version Control and Continuous Integration",
+      id: "CI/CD",
       group: "GIT",
       color: "#1DE9B6",
       description: "For version control, Gamegos uses git. We host our own version control backend for"
@@ -166,7 +170,7 @@ export default [{
       },
       inner: {
         nodes: [{
-          id: "fixb.com (Gitlab)",
+          id: "git.fixb.com (Gitlab)",
           description: "This is the main host of our version control system. It hosts all of our backend"
             + "source codes along with the workers for CI. Tags are used for automatic deployment. Mainly"
             + " we use tags without beta for production deployment and tags with beta for beta clusters"
@@ -175,7 +179,7 @@ export default [{
           color: "#1DE9B6",
           links: {
             GitLab: "https://gitlab.com",
-            "Gamegos GitLab": "https://git.fixb.com",
+            "Gamegos GitLab": "https://git.git.fixb.com",
           },
         }, {
           id: "Jenkins",
@@ -475,7 +479,7 @@ export default [{
       target: "report-svc",
       data: "Realtime Logs And User Data",
     }, {
-      source: "fixb.com (Gitlab)",
+      source: "git.fixb.com (Gitlab)",
       target: "Jenkins",
       data: "Source Codes for Docker Build",
     }, {
@@ -539,9 +543,29 @@ export default [{
       source: "Games",
       data: "Game Logs",
     }, {
-      target: "API Gateway",
+      target: "Public ELB (Load Balancer)",
       source: "Games",
       data: "Game Requests",
+    }, {
+      target: "Office ELB (Load Balancer)",
+      source: "Office",
+      data: "Internal Requests",
+    }, {
+      target: "git.fixb.com (Gitlab)",
+      source: "Office",
+      data: "Source Code Updates",
+    }, {
+      source: "git.fixb.com (Gitlab)",
+      target: "Office",
+      data: "Source Code History",
+    }, {
+      target: "Consul",
+      source: "Office",
+      data: "Key-Value Updates",
+    }, {
+      source: "Consul",
+      target: "Office",
+      data: "Key-Value status",
     }],
   },
 }];

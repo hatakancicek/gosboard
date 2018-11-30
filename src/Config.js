@@ -6,5 +6,5 @@ export default {
     graphBackground: '#263238',
     highlightedLink: "#FAFAFA",
     parentLinkColor: '#64DD17',
-    childLinkColor: '#B71C1C',
+    childLinkColor: '#8C9EFF',
 };

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://git.fixb.com/analytics -->
+<html class="" lang="en"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="analytics" property="og:title">
+<meta content="GitLab Community Edition" property="og:description">
+<meta content="https://git.fixb.com/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://git.fixb.com/analytics" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="analytics" property="twitter:title">
+<meta content="GitLab Community Edition" property="twitter:description">
+<meta content="https://git.fixb.com/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="twitter:image">
+
+<title>analytics · GitLab</title>
+<meta content="GitLab Community Edition" name="description">
+<link rel="shortcut icon" type="image/png" href="https://git.fixb.com/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" id="favicon" data-original-href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png">
+<link rel="stylesheet" media="all" href="./analytics · GitLab_files/application-e9df191d9f0417750d8d3e3d5c894a9e2166a68225e23d62b7fff88e7930bf43.css">
+<link rel="stylesheet" media="print" href="./analytics · GitLab_files/print-c8ff536271f8974b8a9a5f75c0ca25d2b8c1dceb4cff3c01d1603862a0bdcbfc.css">
+
+
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://git.fixb.com/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=300;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.gitlab_url="https://git.fixb.com";gon.revision="32cb452";gon.gitlab_logo="/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png";gon.sprite_icons="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg";gon.sprite_file_icons="/assets/file_icons-7262fc6897e02f1ceaf8de43dc33afa5e4f9a2067f4f68ef77dcc87946575e9e.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-289eccffb1183c188b630297431be837765d9ff4aed6130cf738586fb307c170.css";gon.test_env=false;gon.suggested_label_colors=["#0033CC","#428BCA","#44AD8E","#A8D695","#5CB85C","#69D100","#004E00","#34495E","#7F8C8D","#A295D6","#5843AD","#8E44AD","#FFECDB","#AD4363","#D10069","#CC0033","#FF0000","#D9534F","#D1D100","#F0AD4E","#AD8D43"];gon.current_user_id=24;gon.current_username="atakan1";gon.current_user_fullname="atakan";gon.current_user_avatar_url="https://secure.gravatar.com/avatar/5c5f5d26833db326730560de9d908a68?s=80\u0026d=identicon";
+//]]>
+</script>
+
+
+<script>
+  window.uploads_path = "/groups/analytics/-/uploads";
+</script>
+
+<script src="./analytics · GitLab_files/runtime.7fe6b451.bundle.js" defer="defer"></script>
+<script src="./analytics · GitLab_files/main.54c777b6.chunk.js" defer="defer"></script>
+<script src="./analytics · GitLab_files/commons_pages.groups.show_pages.projects.environments.metrics_pages.projects.graphs.show_pages.users.e9bff13e.chunk.js" defer="defer"></script>
+<script src="./analytics · GitLab_files/commons_pages.dashboard.groups.index_pages.explore.groups_pages.groups.show.f4b1e696.chunk.js" defer="defer"></script>
+<script src="./analytics · GitLab_files/pages.groups.show.3fc96095.chunk.js" defer="defer"></script>
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="CtUiu3AD4WYQrltSnmDU8dHA84cZIpcur/BdfEQT47HZONp0kmbDiJFhjTxPHfGZ6rEHbLIjotPACzsbaYVueg==">
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-iphone-5a9cee0e8a51212e70b90c87c12f382c428870c0ff67d1eb034d884b78d2dae7.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-ipad-a6eec6aeb9da138e507593b464fdac213047e49d3093fc30e90d9a995df83ba3.png" sizes="76x76">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-iphone-retina-72e2aadf86513a56e050e7f0f2355deaa19cc17ed97bbe5147847f2748e5a3e3.png" sizes="120x120">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://git.fixb.com/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png" sizes="152x152">
+<link color="rgb(226, 67, 41)" href="https://git.fixb.com/assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-1196ec67452f618d39cdd85e2e3a542f76574c071051ae7effbfde01710eb17d.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+<link rel="alternate" type="application/atom+xml" title="analytics activity" href="https://git.fixb.com/analytics.atom?feed_token=Hk4sogo1hUA3foFgriGy">
+
+
+
+<script charset="utf-8" src="./analytics · GitLab_files/emoji.f3ca93f6.chunk.js"></script></head>
+
+<body class="ui-indigo " data-group="analytics" data-page="groups:show" data-project="">
+
+
+<header class="navbar navbar-gitlab qa-navbar navbar-expand-sm">
+<a class="sr-only gl-accessibility" href="https://git.fixb.com/analytics#content-body" tabindex="1">Skip to content</a>
+<div class="container-fluid">
+<div class="header-content">
+<div class="title-container">
+<h1 class="title">
+<a title="Dashboard" id="logo" href="https://git.fixb.com/"><svg width="24" height="24" class="tanuki-logo" viewBox="0 0 36 36">
+  <path class="tanuki-shape tanuki-left-ear" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"></path>
+  <path class="tanuki-shape tanuki-right-ear" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"></path>
+  <path class="tanuki-shape tanuki-nose" fill="#e24329" d="M18,34.38 3,14 33,14 Z"></path>
+  <path class="tanuki-shape tanuki-left-eye" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"></path>
+  <path class="tanuki-shape tanuki-right-eye" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"></path>
+  <path class="tanuki-shape tanuki-left-cheek" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"></path>
+  <path class="tanuki-shape tanuki-right-cheek" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"></path>
+</svg>
+
+<span class="logo-text d-none d-sm-block">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 169"><path d="M315.26 2.97h-21.8l.1 162.5h88.3v-20.1h-66.5l-.1-142.4M465.89 136.95c-5.5 5.7-14.6 11.4-27 11.4-16.6 0-23.3-8.2-23.3-18.9 0-16.1 11.2-23.8 35-23.8 4.5 0 11.7.5 15.4 1.2v30.1h-.1m-22.6-98.5c-17.6 0-33.8 6.2-46.4 16.7l7.7 13.4c8.9-5.2 19.8-10.4 35.5-10.4 17.9 0 25.8 9.2 25.8 24.6v7.9c-3.5-.7-10.7-1.2-15.1-1.2-38.2 0-57.6 13.4-57.6 41.4 0 25.1 15.4 37.7 38.7 37.7 15.7 0 30.8-7.2 36-18.9l4 15.9h15.4v-83.2c-.1-26.3-11.5-43.9-44-43.9M557.63 149.1c-8.2 0-15.4-1-20.8-3.5V70.5c7.4-6.2 16.6-10.7 28.3-10.7 21.1 0 29.2 14.9 29.2 39 0 34.2-13.1 50.3-36.7 50.3m9.2-110.6c-19.5 0-30 13.3-30 13.3v-21l-.1-27.8h-21.3l.1 158.5c10.7 4.5 25.3 6.9 41.2 6.9 40.7 0 60.3-26 60.3-70.9-.1-35.5-18.2-59-50.2-59M77.9 20.6c19.3 0 31.8 6.4 39.9 12.9l9.4-16.3C114.5 6 97.3 0 78.9 0 32.5 0 0 28.3 0 85.4c0 59.8 35.1 83.1 75.2 83.1 20.1 0 37.2-4.7 48.4-9.4l-.5-63.9V75.1H63.6v20.1h38l.5 48.5c-5 2.5-13.6 4.5-25.3 4.5-32.2 0-53.8-20.3-53.8-63-.1-43.5 22.2-64.6 54.9-64.6M231.43 2.95h-21.3l.1 27.3v94.3c0 26.3 11.4 43.9 43.9 43.9 4.5 0 8.9-.4 13.1-1.2v-19.1c-3.1.5-6.4.7-9.9.7-17.9 0-25.8-9.2-25.8-24.6v-65h35.7v-17.8h-35.7l-.1-38.5M155.96 165.47h21.3v-124h-21.3v124M155.96 24.37h21.3V3.07h-21.3v21.3"></path></svg>
+
+</span>
+</a></h1>
+<ul class="list-unstyled navbar-sub-nav">
+<li id="nav-projects-dropdown" class="home dropdown header-projects qa-projects-dropdown"><button data-toggle="dropdown" type="button">
+Projects
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</button>
+<div class="dropdown-menu frequent-items-dropdown-menu">
+<div class="frequent-items-dropdown-container">
+<div class="frequent-items-dropdown-sidebar qa-projects-dropdown-sidebar">
+<ul>
+<li class=""><a class="qa-your-projects-link" href="https://git.fixb.com/dashboard/projects">Your projects
+</a></li><li class=""><a href="https://git.fixb.com/dashboard/projects/starred">Starred projects
+</a></li><li class=""><a href="https://git.fixb.com/explore">Explore projects
+</a></li></ul>
+</div>
+<div class="frequent-items-dropdown-content">
+<div><div class="search-input-container d-none d-sm-block"><input placeholder="Search your projects" type="search" class="form-control"> <i aria-hidden="true" class="search-icon fa fa-fw fa-search"></i></div> <!----> <div class="section-header">
+    Frequently visited
+  </div> <div class="frequent-items-list-container"><ul class="list-unstyled"><li class="section-empty">
+      Projects you visit often will appear here
+    </li></ul></div></div>
+</div>
+</div>
+
+</div>
+</li><li id="nav-groups-dropdown" class="home dropdown header-groups qa-groups-dropdown"><button data-toggle="dropdown" type="button">
+Groups
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</button>
+<div class="dropdown-menu frequent-items-dropdown-menu">
+<div class="frequent-items-dropdown-container">
+<div class="frequent-items-dropdown-sidebar qa-groups-dropdown-sidebar">
+<ul>
+<li class=""><a class="qa-your-groups-link" href="https://git.fixb.com/dashboard/groups">Your groups
+</a></li><li class=""><a href="https://git.fixb.com/explore/groups">Explore groups
+</a></li></ul>
+</div>
+<div class="frequent-items-dropdown-content">
+<div><div class="search-input-container d-none d-sm-block"><input placeholder="Search your groups" type="search" class="form-control"> <i aria-hidden="true" class="search-icon fa fa-fw fa-search"></i></div> <!----> <div class="section-header">
+    Frequently visited
+  </div> <div class="frequent-items-list-container"><ul class="list-unstyled"><li class="section-empty">
+      Groups you visit often will appear here
+    </li></ul></div></div>
+</div>
+</div>
+
+</div>
+</li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-activity" title="Activity" href="https://git.fixb.com/dashboard/activity">Activity
+</a></li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-milestones" title="Milestones" href="https://git.fixb.com/dashboard/milestones">Milestones
+</a></li><li class="d-none d-lg-block d-xl-block"><a class="dashboard-shortcuts-snippets" title="Snippets" href="https://git.fixb.com/dashboard/snippets">Snippets
+</a></li><li class="header-more dropdown d-lg-none d-xl-none">
+<a data-toggle="dropdown" href="https://git.fixb.com/analytics#">
+More
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</a>
+<div class="dropdown-menu">
+<ul>
+<li class=""><a title="Activity" href="https://git.fixb.com/dashboard/activity">Activity
+</a></li><li class=""><a class="dashboard-shortcuts-milestones" title="Milestones" href="https://git.fixb.com/dashboard/milestones">Milestones
+</a></li><li class=""><a class="dashboard-shortcuts-snippets" title="Snippets" href="https://git.fixb.com/dashboard/snippets">Snippets
+</a></li></ul>
+</div>
+</li>
+<li class="hidden">
+<a title="Projects" class="dashboard-shortcuts-projects" href="https://git.fixb.com/dashboard/projects">Projects
+</a></li>
+<li class="line-separator d-none d-sm-block"></li>
+<li class=""><a title="Instance Statistics" aria-label="Instance Statistics" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/-/instance_statistics"><svg class="s18"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#chart"></use></svg>
+</a></li></ul>
+
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="header-new dropdown">
+<a class="header-new-dropdown-toggle has-tooltip qa-new-menu-toggle" title="New..." ref="tooltip" aria-label="New..." data-toggle="dropdown" data-placement="bottom" data-container="body" data-display="static" href="https://git.fixb.com/projects/new"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#plus-square"></use></svg>
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li>
+<a class="qa-global-new-project-link" href="https://git.fixb.com/projects/new">New project</a>
+</li>
+<li>
+<a href="https://git.fixb.com/groups/new">New group</a>
+</li>
+<li>
+<a href="https://git.fixb.com/snippets/new">New snippet</a>
+</li>
+</ul>
+</div>
+</li>
+
+<li class="nav-item d-none d-sm-none d-md-block m-auto">
+<div class="search search-form">
+<form class="form-inline" action="https://git.fixb.com/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><div class="search-input-container">
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search or jump to…" class="search-input dropdown-menu-toggle no-outline js-search-dashboard-options disabled" spellcheck="false" tabindex="1" autocomplete="off" data-issues-path="/dashboard/issues" data-mr-path="/dashboard/merge_requests" aria-label="Search or jump to…">
+<button class="hidden js-dropdown-search-toggle" data-toggle="dropdown" type="button"></button>
+<div class="dropdown-menu dropdown-select">
+<div class="dropdown-content"><ul>
+<li class="dropdown-menu-empty-item">
+<a>
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+<svg class="s16 search-icon"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#search"></use></svg>
+<svg class="s16 clear-icon js-clear-input"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#close"></use></svg>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id" value="69" class="js-search-group-options" data-group-path="analytics" data-name="analytics" data-issues-path="/groups/analytics/-/issues" data-mr-path="/groups/analytics/-/merge_requests">
+<input type="hidden" name="project_id" id="search_project_id" value="" class="js-search-project-options">
+<input type="hidden" name="repository_ref" id="repository_ref">
+
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete"></div>
+</form></div>
+
+</li>
+<li class="nav-item d-inline-block d-sm-none d-md-none">
+<a title="Search" aria-label="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/search?group_id=69"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#search"></use></svg>
+</a></li>
+<li class="user-counter"><a title="Issues" class="dashboard-shortcuts-issues" aria-label="Issues" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/dashboard/issues?assignee_id=24"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#issues"></use></svg>
+<span class="badge badge-pill hidden issues-count">
+0
+</span>
+</a></li><li class="user-counter"><a title="Merge requests" class="dashboard-shortcuts-merge_requests" aria-label="Merge requests" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/dashboard/merge_requests?assignee_id=24"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#git-merge"></use></svg>
+<span class="badge badge-pill hidden merge-requests-count">
+0
+</span>
+</a></li><li class="user-counter"><a title="Todos" aria-label="Todos" class="shortcuts-todos" data-toggle="tooltip" data-placement="bottom" data-container="body" href="https://git.fixb.com/dashboard/todos"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#todo-done"></use></svg>
+<span class="badge badge-pill hidden todos-count">
+0
+</span>
+</a></li><li class="nav-item header-user dropdown">
+<a class="header-user-dropdown-toggle" data-toggle="dropdown" href="https://git.fixb.com/atakan1"><img width="23" height="23" class="header-user-avatar qa-user-avatar js-lazy-loaded" src="./analytics · GitLab_files/5c5f5d26833db326730560de9d908a68">
+<svg class=" caret-down"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-down"></use></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li class="current-user">
+<div class="user-name bold">
+atakan
+</div>
+@atakan1
+</li>
+<li class="divider"></li>
+<li>
+<a class="profile-link" data-user="atakan1" href="https://git.fixb.com/atakan1">Profile</a>
+</li>
+<li>
+<a href="https://git.fixb.com/profile">Settings</a>
+</li>
+<li>
+<a href="https://git.fixb.com/help">Help</a>
+</li>
+<li class="divider"></li>
+<li>
+<a target="_blank" class="text-nowrap" href="https://about.gitlab.com/contributing">Contribute to GitLab
+<svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#external-link"></use></svg>
+</a></li>
+<li class="divider"></li>
+
+<li>
+<a class="sign-out-link" href="https://git.fixb.com/users/sign_out">Sign out</a>
+</li>
+</ul>
+
+</div>
+</li>
+</ul>
+</div>
+<button class="navbar-toggler d-block d-sm-none" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="s12 more-icon js-navbar-toggle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#ellipsis_h"></use></svg>
+<svg class="s12 close-icon js-navbar-toggle-left"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#close"></use></svg>
+</button>
+</div>
+</div>
+</header>
+
+<div class="layout-page page-with-contextual-sidebar">
+<div class="nav-sidebar">
+<div class="nav-sidebar-inner-scroll">
+<div class="context-header">
+<a title="analytics" href="https://git.fixb.com/analytics"><div class="avatar-container s40 group-avatar">
+<div class="avatar s40 avatar-tile identicon bg7">A</div>
+</div>
+<div class="sidebar-context-title">
+analytics
+</div>
+</a></div>
+<ul class="sidebar-top-level-items">
+<li class="home active"><a href="https://git.fixb.com/analytics"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#home"></use></svg>
+</div>
+<span class="nav-item-name">
+Overview
+</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item active"><a href="https://git.fixb.com/analytics"><strong class="fly-out-top-item-name">
+Overview
+</strong>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class="home active"><a title="Group details" href="https://git.fixb.com/analytics"><span>
+Details
+</span>
+</a></li><li class=""><a title="Activity" href="https://git.fixb.com/groups/analytics/-/activity"><span>
+Activity
+</span>
+</a></li></ul>
+</li><li class=""><a href="https://git.fixb.com/groups/analytics/-/issues"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#issues"></use></svg>
+</div>
+<span class="nav-item-name">
+Issues
+</span>
+<span class="badge badge-pill count">0</span>
+</a><ul class="sidebar-sub-level-items">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/groups/analytics/-/issues"><strong class="fly-out-top-item-name">
+Issues
+</strong>
+<span class="badge badge-pill count issue_counter fly-out-badge">0</span>
+</a></li><li class="divider fly-out-top-item"></li>
+<li class="home"><a title="List" href="https://git.fixb.com/groups/analytics/-/issues"><span>
+List
+</span>
+</a></li><li class=""><a title="Board" href="https://git.fixb.com/groups/analytics/-/boards"><span>
+Board
+</span>
+</a></li><li class=""><a title="Labels" href="https://git.fixb.com/groups/analytics/-/labels"><span>
+Labels
+</span>
+</a></li><li class=""><a title="Milestones" href="https://git.fixb.com/groups/analytics/-/milestones"><span>
+Milestones
+</span>
+</a></li></ul>
+</li><li class=""><a href="https://git.fixb.com/groups/analytics/-/merge_requests"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#git-merge"></use></svg>
+</div>
+<span class="nav-item-name">
+Merge Requests
+</span>
+<span class="badge badge-pill count">0</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/groups/analytics/-/merge_requests"><strong class="fly-out-top-item-name">
+Merge Requests
+</strong>
+<span class="badge badge-pill count merge_counter js-merge-counter fly-out-badge">0</span>
+</a></li></ul>
+</li><li class=""><a href="https://git.fixb.com/groups/analytics/-/group_members"><div class="nav-icon-container">
+<svg><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#users"></use></svg>
+</div>
+<span class="nav-item-name">
+Members
+</span>
+</a><ul class="sidebar-sub-level-items is-fly-out-only">
+<li class="fly-out-top-item"><a href="https://git.fixb.com/groups/analytics/-/group_members"><strong class="fly-out-top-item-name">
+Members
+</strong>
+</a></li></ul>
+</li></ul>
+<a class="toggle-sidebar-button js-toggle-sidebar" role="button" title="Toggle sidebar" type="button">
+<svg class=" icon-angle-double-left"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-double-left"></use></svg>
+<svg class=" icon-angle-double-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-double-right"></use></svg>
+<span class="collapse-text">Collapse sidebar</span>
+</a>
+<button name="button" type="button" class="close-nav-button"><svg class="s16"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#close"></use></svg>
+<span class="collapse-text">Close sidebar</span>
+</button>
+</div>
+</div>
+
+<div class="content-wrapper">
+
+<div class="mobile-overlay"></div>
+<div class="alert-wrapper">
+
+
+
+
+<nav class="breadcrumbs container-fluid container-limited" role="navigation">
+<div class="breadcrumbs-container">
+<button name="button" type="button" class="toggle-mobile-nav"><span class="sr-only">Open sidebar</span>
+<i aria-hidden="true" data-hidden="true" class="fa fa-bars"></i>
+</button><div class="breadcrumbs-links js-title-container">
+<ul class="list-unstyled breadcrumbs-list js-breadcrumbs-list">
+<li><a class="group-path breadcrumb-item-text js-breadcrumb-item-text " href="https://git.fixb.com/analytics">analytics</a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></li>
+
+<li>
+<h2 class="breadcrumbs-sub-title"><a href="https://git.fixb.com/analytics">Details</a></h2>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="flash-container flash-container-page">
+</div>
+
+</div>
+<div class=" ">
+<div class="content" id="content-body">
+<div class="group-home-panel text-center">
+<div class="container-fluid container-limited">
+<div class="avatar-container s70 group-avatar">
+<div class="avatar s70 avatar-tile identicon bg7">A</div>
+</div>
+<h1 class="group-title">
+analytics
+<span class="visibility-icon has-tooltip" data-container="body" title="Private - The group and its projects can only be viewed by members.">
+<i aria-hidden="true" data-hidden="true" class="fa fa-lock"></i>
+</span>
+</h1>
+<div class="group-buttons">
+<div class="project-action-button inline">
+<a data-confirm="Are you sure you want to leave the &quot;analytics&quot; group?" class="btn" rel="nofollow" data-method="delete" href="https://git.fixb.com/groups/analytics/-/group_members/leave">Leave group</a>
+</div>
+
+<div class="js-notification-dropdown notification-dropdown project-action-button dropdown inline">
+<form class="inline notification-form" id="edit_notification_setting_266" action="https://git.fixb.com/notification_settings/266" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="namespace_id" id="namespace_id" value="69">
+<input class="notification_setting_level" type="hidden" value="global" name="notification_setting[level]" id="notification_setting_level">
+<div class="js-notification-toggle-btns">
+<div class="">
+<button aria-label="Notification setting: Global" class="dropdown-new btn btn-default has-tooltip notifications-btn" data-container="body" data-display="static" data-target="dropdown-24-69-Namespace" data-toggle="dropdown" id="notifications-button" title="Notification setting" type="button">
+<i aria-hidden="true" data-hidden="true" class="fa fa-bell js-notification-loading"></i>
+Global
+<i aria-hidden="true" data-hidden="true" class="fa fa-caret-down"></i>
+</button>
+<ul class="dropdown-24-69-Namespace dropdown-menu dropdown-menu-large dropdown-menu-no-wrap dropdown-menu-selectable" role="menu">
+<li role="menuitem"><a class="update-notification is-active" data-notification-level="global" data-notification-title="Global" href="https://git.fixb.com/analytics#"><strong class="dropdown-menu-inner-title">Global</strong><span class="dropdown-menu-inner-content">Use your global notification setting</span></a></li>
+<li role="menuitem"><a class="update-notification " data-notification-level="watch" data-notification-title="Watch" href="https://git.fixb.com/analytics#"><strong class="dropdown-menu-inner-title">Watch</strong><span class="dropdown-menu-inner-content">You will receive notifications for any activity</span></a></li>
+<li role="menuitem"><a class="update-notification " data-notification-level="mention" data-notification-title="On mention" href="https://git.fixb.com/analytics#"><strong class="dropdown-menu-inner-title">On mention</strong><span class="dropdown-menu-inner-content">You will receive notifications only for comments in which you were @mentioned</span></a></li>
+<li role="menuitem"><a class="update-notification " data-notification-level="participating" data-notification-title="Participate" href="https://git.fixb.com/analytics#"><strong class="dropdown-menu-inner-title">Participate</strong><span class="dropdown-menu-inner-content">You will only receive notifications for threads you have participated in</span></a></li>
+<li role="menuitem"><a class="update-notification " data-notification-level="disabled" data-notification-title="Disabled" href="https://git.fixb.com/analytics#"><strong class="dropdown-menu-inner-title">Disabled</strong><span class="dropdown-menu-inner-content">You will not get any notifications via email</span></a></li>
+<li class="divider"></li>
+<li>
+<a class="update-notification" data-notification-level="custom" data-notification-title="Custom" data-target="#modal-24-69-Namespace" data-toggle="modal" href="https://git.fixb.com/analytics#" role="button">
+<strong class="dropdown-menu-inner-title">Custom</strong>
+<span class="dropdown-menu-inner-content">You will only receive notifications for the events you choose</span>
+</a>
+</li>
+</ul>
+
+</div>
+</div>
+</form></div>
+
+</div>
+</div>
+</div>
+
+<div class="container-fluid container-limited groups-listing" data-endpoints-default="/groups/analytics/-/children.json" data-endpoints-shared="/groups/analytics/-/shared_projects.json">
+<div class="top-area group-nav-container">
+<div class="group-search">
+<form class="group-filter-form js-group-filter-form" id="group-filter-form" action="https://git.fixb.com/analytics" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="search" name="filter" id="group-filter-form-field" placeholder="Search by name" class="group-filter-form-field form-control js-groups-list-filter" spellcheck="false" tabindex="2">
+</form>
+</div>
+<div class="scrolling-tabs-container inner-page-scroll-tabs">
+<div class="fade-left"><i aria-hidden="true" data-hidden="true" class="fa fa-angle-left"></i></div>
+<div class="fade-right"><i aria-hidden="true" data-hidden="true" class="fa fa-angle-right"></i></div>
+<ul class="nav-links scrolling-tabs mobile-separator nav nav-tabs is-initialized">
+<li class="js-subgroups_and_projects-tab">
+<a data-target="div#subgroups_and_projects" data-action="subgroups_and_projects" data-toggle="tab" href="https://git.fixb.com/analytics" class="active show">Subgroups and projects
+</a></li>
+<li class="js-shared-tab">
+<a data-target="div#shared" data-action="shared" data-toggle="tab" href="https://git.fixb.com/groups/analytics/-/shared">Shared projects
+</a></li>
+<li class="js-archived-tab">
+<a data-target="div#archived" data-action="archived" data-toggle="tab" href="https://git.fixb.com/groups/analytics/-/archived">Archived projects
+</a></li>
+</ul>
+</div>
+<div class="nav-controls">
+<div class="dropdown inline js-group-filter-dropdown-wrap append-right-10">
+<button class="dropdown-toggle" data-toggle="dropdown" type="button">
+<span class="dropdown-label">
+Last created
+</span>
+<i aria-hidden="true" data-hidden="true" class="fa fa-chevron-down"></i>
+</button>
+<ul class="dropdown-menu dropdown-menu-right dropdown-menu-selectable">
+<li class="dropdown-header">
+Sort by
+</li>
+<li class="js-filter-sort-order">
+<a href="https://git.fixb.com/analytics?sort=name_asc">Name
+</a></li>
+<li class="js-filter-sort-order">
+<a href="https://git.fixb.com/analytics?sort=name_desc">Name, descending
+</a></li>
+<li class="js-filter-sort-order">
+<a class="is-active" href="https://git.fixb.com/analytics?sort=created_desc">Last created
+</a></li>
+<li class="js-filter-sort-order">
+<a href="https://git.fixb.com/analytics?sort=created_asc">Oldest created
+</a></li>
+<li class="js-filter-sort-order">
+<a href="https://git.fixb.com/analytics?sort=updated_desc">Last updated
+</a></li>
+<li class="js-filter-sort-order">
+<a href="https://git.fixb.com/analytics?sort=updated_asc">Oldest updated
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<div class="tab-content">
+<div class="tab-pane active show" id="subgroups_and_projects">
+<div id="js-groups-subgroups_and_projects-tree">
+<div class="empty-state hidden">
+<div class="group-empty-state row align-items-center justify-content-center qa-groups-empty-state">
+<div class="icon text-center order-md-2">
+<svg width="249" height="368" viewBox="891 156 249 368" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="a" width="131" height="162" rx="10"></rect><mask id="e" x="0" y="0" width="131" height="162" fill="#fff"><use xlink:href="#a"></use></mask><path d="M223.616 127.958V108.96c0-4.416-3.584-8-8.005-8h-23.985c-2.778 0-5.98 2.014-7.18 4.5l-5.07 10.5h-49.763c-5.527 0-9.996 4.475-9.996 9.997v53.005c0 5.513 4.475 9.997 9.996 9.997h84.01c5.525 0 9.994-4.477 9.994-9.998v-51.004z" id="b"></path><mask id="f" x="0" y="0" width="104" height="88" fill="#fff"><use xlink:href="#b"></use></mask><path d="M47 25h.996C53.52 25 58 29.472 58 34.99v20.02C58 60.526 53.52 65 47.996 65H10.004C4.48 65 0 60.528 0 55.01V34.99C0 29.474 4.48 25 10.004 25H11v-7c0-9.94 8.06-18 18-18s18 8.06 18 18v7zm-6 0H17v-7c0-6.627 5.373-12 12-12s12 5.373 12 12v7z" id="c"></path><mask id="g" x="0" y="0" width="58" height="65" fill="#fff"><use xlink:href="#c"></use></mask><path d="M0 10.008C0 4.48 4.476 0 10 0h218c5.523 0 10 4.473 10 10.008v140.94c0 5.53-4.062 11.882-9.08 14.196l-100.84 46.5c-5.015 2.31-13.142 2.312-18.16 0l-100.84-46.5C4.064 162.832 0 156.484 0 150.95V10.007z" id="d"></path><mask id="h" x="0" y="0" width="238" height="213.417" fill="#fff"><use xlink:href="#d"></use></mask></defs><g fill="none" fill-rule="evenodd" transform="translate(891 156)"><g transform="rotate(8 -266.528 490.3)"><use stroke="#E5E5E5" mask="url(#e)" stroke-width="8" fill="#FFF" xlink:href="#a"></use><rect fill="#FC8A51" x="20" y="31" width="12" height="4" rx="2"></rect><rect fill="#FC8A51" x="60" y="31" width="12" height="4" rx="2"></rect><rect fill="#FDE5D8" x="36" y="31" width="20" height="4" rx="2"></rect><rect fill="#6B4FBB" x="20" y="65" width="20" height="4" rx="2"></rect><rect fill="#FDE5D8" x="44" y="65" width="20" height="4" rx="2"></rect><rect fill="#FC8A51" x="36" y="80" width="20" height="4" rx="2"></rect><rect fill="#FDE5D8" x="20" y="80" width="12" height="4" rx="2"></rect><rect fill="#FDE5D8" x="20" y="48" width="12" height="4" rx="2"></rect><rect fill="#FC8A51" x="36" y="48" width="12" height="4" rx="2"></rect><rect fill="#FDE5D8" x="60" y="80" width="12" height="4" rx="2"></rect><rect fill="#6B4FBB" x="52" y="48" width="12" height="4" rx="2"></rect><rect fill="#FDE5D8" x="68" y="48" width="12" height="4" rx="2"></rect></g><use stroke="#B5A7DD" mask="url(#f)" stroke-width="8" fill="#FFF" transform="rotate(5 171.616 144.96)" xlink:href="#b"></use><path d="M58 132c0-9.94 8.06-18 18-18s18 8.06 18 18-8.06 18-18 18-18-8.06-18-18z" fill="#C1E7D0"></path><path d="M90.143 132c0-7.81-6.332-14.143-14.143-14.143-7.81 0-14.143 6.332-14.143 14.143 0 7.81 6.332 14.143 14.143 14.143 7.81 0 14.143-6.332 14.143-14.143z" fill="#FFF"></path><path d="M74.686 133.875l-3.18-3.18c-.29-.29-.77-.296-1.06-.005l-1.55 1.55c-.287.287-.29.766.004 1.06l4.92 4.92c.504.504 1.32.504 1.823 0l.654-.653 7.804-7.804c.3-.3.29-.77-.005-1.067l-1.578-1.58c-.302-.3-.775-.298-1.068-.004l-6.764 6.763z" fill="#31AF64"></path><path d="M4 66c0-9.94 8.06-18 18-18s18 8.06 18 18-8.06 18-18 18S4 75.94 4 66z" fill="#D5ECF7"></path><path d="M36.143 66c0-7.81-6.332-14.143-14.143-14.143-7.81 0-14.143 6.332-14.143 14.143 0 7.81 6.332 14.143 14.143 14.143 7.81 0 14.143-6.332 14.143-14.143z" fill="#FFF"></path><path d="M22 55.714c5.68 0 10.286 4.605 10.286 10.286 0 5.68-4.605 10.286-10.286 10.286-3.45 0-6.505-1.7-8.37-4.307L22 66V55.714z" fill="#2D9FD8"></path><g transform="rotate(-8 748.533 18.147)"><use stroke="#FDE5D8" mask="url(#g)" stroke-width="8" fill="#FFF" xlink:href="#c"></use><path d="M31 46.584c1.766-.772 3-2.534 3-4.584 0-2.76-2.24-5-5-5s-5 2.24-5 5c0 2.05 1.234 3.812 3 4.584v3.42c0 1.1.895 1.996 2 1.996 1.112 0 2-.894 2-1.997v-3.42z" fill="#FC8A51"></path></g><g transform="translate(0 154)"><use stroke="#E5E5E5" mask="url(#h)" stroke-width="8" fill="#FFF" xlink:href="#d"></use><g opacity=".3"><path d="M141.837 104.53l-2.56-7.993-5.074-15.843c-.26-.815-1.398-.815-1.66 0l-5.074 15.843h-16.85l-5.075-15.843c-.26-.815-1.398-.815-1.66 0l-5.073 15.843-2.56 7.993c-.234.73.022 1.528.633 1.98l22.16 16.33 22.16-16.33c.61-.452.866-1.25.632-1.98" fill="#A1A1A1"></path><path fill="#5C5C5C" d="M119.044 122.84l8.425-26.303h-16.85l8.424 26.304"></path><path fill="#787878" d="M119.044 122.84l-8.425-26.303H98.81l20.232 26.304"></path><path fill="#787878" d="M119.044 122.84l8.425-26.303h11.807l-20.233 26.304"></path><path d="M98.812 96.537l-2.56 7.993c-.234.73.022 1.528.633 1.98l22.16 16.33L98.81 96.538z" fill="#A1A1A1"></path><path d="M98.812 96.537h11.807l-5.075-15.843c-.26-.815-1.398-.815-1.66 0l-5.073 15.843z" fill="#5C5C5C"></path><path d="M139.277 96.537l2.56 7.993c.234.73-.022 1.528-.634 1.98l-22.16 16.33 20.234-26.303z" fill="#A1A1A1"></path><path d="M139.277 96.537H127.47l5.074-15.843c.26-.815 1.398-.815 1.66 0l5.073 15.843z" fill="#5C5C5C"></path></g><path d="M57 18.29c1.105 0 2-.818 2-1.828 0-1.01-.895-1.83-2-1.83H41c-1.105 0-2 .82-2 1.83 0 1.01.895 1.83 2 1.83h16zm36 0c1.105 0 2-.818 2-1.828 0-1.01-.895-1.83-2-1.83H77c-1.105 0-2 .82-2 1.83 0 1.01.895 1.83 2 1.83h16zm36 0c1.105 0 2-.818 2-1.828 0-1.01-.895-1.83-2-1.83h-16c-1.105 0-2 .82-2 1.83 0 1.01.895 1.83 2 1.83h16zm36 0c1.105 0 2-.818 2-1.828 0-1.01-.895-1.83-2-1.83h-16c-1.105 0-2 .82-2 1.83 0 1.01.895 1.83 2 1.83h16zm36 0c1.105 0 2-.818 2-1.828 0-1.01-.895-1.83-2-1.83h-16c-1.105 0-2 .82-2 1.83 0 1.01.895 1.83 2 1.83h16zm17 24.693c0 1.01.895 1.83 2 1.83s2-.82 2-1.83V28.35c0-1.01-.895-1.83-2-1.83s-2 .82-2 1.83v14.633zm-202 0c0 1.01.895 1.83 2 1.83s2-.82 2-1.83V28.35c0-1.01-.895-1.83-2-1.83s-2 .82-2 1.83v14.633zm202 32.923c0 1.01.895 1.83 2 1.83s2-.82 2-1.83V61.274c0-1.01-.895-1.83-2-1.83s-2 .82-2 1.83v14.632zm-202 0c0 1.01.895 1.83 2 1.83s2-.82 2-1.83V61.274c0-1.01-.895-1.83-2-1.83s-2 .82-2 1.83v14.632zm202 32.923c0 1.01.895 1.828 2 1.828s2-.82 2-1.83V94.2c0-1.012-.895-1.83-2-1.83s-2 .818-2 1.83v14.63zm-202 0c0 1.01.895 1.828 2 1.828s2-.82 2-1.83V94.2c0-1.012-.895-1.83-2-1.83s-2 .818-2 1.83v14.63zm202 32.922c0 1.01.895 1.83 2 1.83s2-.82 2-1.83V127.12c0-1.01-.895-1.83-2-1.83s-2 .82-2 1.83v14.632zm-202 0c0 1.01.895 1.83 2 1.83s2-.82 2-1.83V127.12c0-1.01-.895-1.83-2-1.83s-2 .82-2 1.83v14.632zm179.023 19.555c-.988.452-1.388 1.55-.894 2.454.493.904 1.694 1.27 2.682.82l14.31-6.545c.99-.452 1.39-1.55.896-2.454-.494-.902-1.696-1.27-2.684-.817l-14.31 6.544zm-32.2 14.723c-.987.452-1.388 1.55-.894 2.454.493.904 1.695 1.27 2.683.818l14.31-6.544c.99-.45 1.39-1.55.895-2.454-.494-.903-1.695-1.27-2.683-.818l-14.31 6.544zm-32.2 14.724c-.987.45-1.387 1.55-.893 2.454.494.903 1.695 1.27 2.683.818l14.31-6.544c.99-.452 1.39-1.55.896-2.454-.495-.904-1.697-1.27-2.685-.818l-14.31 6.544zm-23.67-2.023l-12.186-5.57c-.987-.452-2.19-.086-2.683.817-.494.904-.093 2.003.895 2.454l12.185 5.573c.754.345 1.57.645 2.438.898 1.052.307 2.177-.224 2.513-1.187.335-.962-.246-1.99-1.298-2.298-.677-.197-1.302-.426-1.864-.684zM62.57 168.437c-.988-.452-2.19-.086-2.683.818-.494.903-.094 2.002.894 2.454l14.31 6.544c.988.45 2.19.085 2.683-.818.494-.904.094-2.003-.894-2.454l-14.312-6.544zm-32.2-14.723c-.988-.452-2.19-.086-2.683.818-.494.904-.093 2.003.895 2.454l14.31 6.544c.988.452 2.19.086 2.684-.818.494-.903.093-2.002-.895-2.454l-14.312-6.543z" fill="#EEE"></path></g><g><path d="M104 18c0-9.94 8.06-18 18-18s18 8.06 18 18-8.06 18-18 18-18-8.06-18-18z" fill="#FADFD9"></path><path d="M136.143 18c0-7.81-6.332-14.143-14.143-14.143-7.81 0-14.143 6.332-14.143 14.143 0 7.81 6.332 14.143 14.143 14.143 7.81 0 14.143-6.332 14.143-14.143z" fill="#FFF"></path><path d="M119.43 8.994c0-.707.57-1.28 1.283-1.28h2.574c.71 0 1.284.57 1.284 1.28v10.298c0 .706-.57 1.28-1.283 1.28h-2.574c-.71 0-1.284-.57-1.284-1.28V8.994zm0 15.433c0-.71.57-1.284 1.283-1.284h2.574c.71 0 1.284.57 1.284 1.284V27c0 .71-.57 1.286-1.283 1.286h-2.574c-.71 0-1.284-.57-1.284-1.285v-2.573z" fill="#E75E40"></path></g><g><path d="M213 89c0-9.94 8.06-18 18-18s18 8.06 18 18-8.06 18-18 18-18-8.06-18-18z" fill="#F6D4DC"></path><path d="M245.143 89c0-7.81-6.332-14.143-14.143-14.143-7.81 0-14.143 6.332-14.143 14.143 0 7.81 6.332 14.143 14.143 14.143 7.81 0 14.143-6.332 14.143-14.143z" fill="#FFF"></path><path d="M231 86.348l-3.603-3.602c-.288-.29-.766-.286-1.063.01l-1.578 1.578c-.3.302-.3.773-.01 1.063L228.348 89l-3.602 3.603c-.29.288-.286.766.01 1.063l1.578 1.578c.302.3.773.3 1.063.01L231 91.652l3.603 3.602c.288.29.766.286 1.063-.01l1.578-1.578c.3-.302.3-.773.01-1.063L233.652 89l3.602-3.603c.29-.288.286-.766-.01-1.063l-1.578-1.578c-.302-.3-.773-.3-1.063-.01L231 86.348z" fill="#D22852"></path></g></g></svg>
+
+</div>
+<div class="text-content m-0 order-md-1">
+<h4>A group is a collection of several projects.</h4>
+<p>If you organize your projects under a group, it works like a folder.</p>
+<p>You can manage your group member’s permissions and access to each project in the group.</p>
+</div>
+</div>
+
+</div>
+<ul class="content-list" data-group-id="69" data-hide-projects="false" data-path="/analytics">
+<div><!----> <div class="groups-list-tree-container qa-groups-list-tree-container"><!----> <ul class="content-list group-list-tree"><li id="group-374" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/unity-budget-task" class="no-expand"><div class="avatar identicon s24 bg4">
+  U
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/unity-budget-task" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / unity-budget-task">unity-budget-task</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-375" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/lambda-exchange-rates" class="no-expand"><div class="avatar identicon s24 bg5">
+  L
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/lambda-exchange-rates" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / lambda-exchange-rates">lambda-exchange-rates</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-376" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/appannie-task" class="no-expand"><div class="avatar identicon s24 bg6">
+  A
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/appannie-task" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / appannie-task">appannie-task</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-377" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/s3-log-processor" class="no-expand"><div class="avatar identicon s24 bg7">
+  S
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/s3-log-processor" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / s3-log-processor">s3-log-processor</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-378" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/ekumen" class="no-expand"><div class="avatar identicon s24 bg1">
+  E
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/ekumen" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / ekumen">ekumen</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-379" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/report-svc-old" class="no-expand"><div class="avatar identicon s24 bg2">
+  R
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/report-svc-old" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / report-svc-old">report-svc-old</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-380" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/log-svc" class="no-expand"><div class="avatar identicon s24 bg3">
+  L
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/log-svc" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / log-svc">log-svc</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-381" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/weekly-report-mng" class="no-expand"><div class="avatar identicon s24 bg4">
+  W
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/weekly-report-mng" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / weekly-report-mng">weekly-report-mng</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-382" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/etl" class="no-expand"><div class="avatar identicon s24 bg5">
+  E
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/etl" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / etl">etl</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-383" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/log-collector-svc" class="no-expand"><div class="avatar identicon s24 bg6">
+  L
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/log-collector-svc" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / log-collector-svc">log-collector-svc</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-384" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/report-svc" class="no-expand"><div class="avatar identicon s24 bg7">
+  R
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/report-svc" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / report-svc">report-svc</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-385" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/beholder" class="no-expand"><div class="avatar identicon s24 bg1">
+  B
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/beholder" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / beholder">beholder</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-386" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/useroperations" class="no-expand"><div class="avatar identicon s24 bg2">
+  U
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/useroperations" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / useroperations">useroperations</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-387" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/misc" class="no-expand"><div class="avatar identicon s24 bg3">
+  M
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/misc" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / misc">misc</a> <!----></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li><li id="group-388" class="group-row"><div class="group-row-contents d-flex justify-content-end align-items-center project-row-contents"><div class="folder-toggle-wrap append-right-4 d-flex align-items-center"><span class="folder-caret"><svg class="s12 ic-angle-right"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#angle-right"></use></svg></span> <span class="item-type-icon"><svg class="s16 ic-bookmark"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#bookmark"></use></svg></span></div> <div class="avatar-container s24 d-none d-sm-flex"><a href="https://git.fixb.com/analytics/integrator" class="no-expand"><div class="avatar identicon s24 bg4">
+  I
+</div></a></div> <div class="group-text flex-grow"><div class="title namespace-title append-right-8"><a href="https://git.fixb.com/analytics/integrator" title="" data-placement="bottom" class="no-expand" data-original-title="analytics / integrator">integrator</a> <span class="user-access-role">
+          Developer
+        </span></div> <!----></div> <div class="stats group-stats prepend-top-2"><!----> <!----> <!----> <span data-placement="bottom" title="" data-container="body" class="project-stars" data-original-title=""><svg class="s16 ic-star"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#star"></use></svg> <span class="stat-value">
+    0
+  </span></span> <span data-placement="left" title="" data-container="body" class="item-visibility" data-original-title="Private - Project access must be granted explicitly to each user."><svg class="s16 ic-lock"><use xlink:href="/assets/icons-8887803ae40f1ee57a8952b5e3b080213a686e327d4d971d8e532c862b79990b.svg#lock"></use></svg> <!----></span> <div class="last-updated"><time title="" data-placement="bottom" data-container="body" class="" data-original-title="Apr 27, 2018 12:14am GMT">7 months ago</time></div></div> <!----></div> <!----></li> <!----></ul> <!----></div> <div class="modal-open" style="display: none;"><div role="dialog" tabindex="-1" class="modal d-block"><div role="document" class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title float-left">
+              Are you sure?
+            </h4> <button type="button" data-dismiss="modal" aria-label="Close" class="close float-right"><span aria-hidden="true">×</span></button></div> <div class="modal-body"><p></p></div> <div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-default">
+            Cancel
+          </button> <!----> <button type="button" data-dismiss="modal" class="btn js-primary-button btn-warning">
+            Leave
+          </button></div></div></div></div> <div class="modal-backdrop fade show"></div></div></div>
+</ul>
+</div>
+
+</div>
+<div class="tab-pane" id="shared">
+<div id="js-groups-shared-tree">
+<div class="empty-state text-center hidden">
+<p>There are no projects shared with this group yet</p>
+</div>
+<ul class="content-list" data-group-id="69" data-hide-projects="false" data-path="/analytics">
+<div class="js-groups-list-holder">
+<div class="loading-container text-center">
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin fa-2x loading-animation prepend-top-20"></i>
+</div>
+</div>
+</ul>
+</div>
+
+</div>
+<div class="tab-pane" id="archived">
+<div id="js-groups-archived-tree">
+<div class="empty-state text-center hidden">
+<p>There are no archived projects yet</p>
+</div>
+<ul class="content-list" data-group-id="69" data-hide-projects="false" data-path="/analytics">
+<div class="js-groups-list-holder">
+<div class="loading-container text-center">
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin fa-2x loading-animation prepend-top-20"></i>
+</div>
+</div>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div aria-labelledby="custom-notifications-title" class="modal fade" id="modal-24-69-Namespace" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="custom-notifications-title">
+Custom notification events
+</h4>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="container-fluid">
+<form class="custom-notifications-form" id="edit_notification_setting_266" action="https://git.fixb.com/notification_settings/266" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="CtUiu3AD4WYQrltSnmDU8dHA84cZIpcur/BdfEQT47HZONp0kmbDiJFhjTxPHfGZ6rEHbLIjotPACzsbaYVueg=="><input type="hidden" name="namespace_id" id="namespace_id" value="69">
+<div class="row">
+<div class="col-lg-4">
+<h4 class="prepend-top-0">Notification events</h4>
+<p>
+Custom notification levels are the same as participating levels. With custom notification levels you will also receive notifications for select events. To find out more, check out <a target="_blank" href="https://git.fixb.com/help/workflow/notifications">notification emails</a>.
+</p>
+</div>
+<div class="col-lg-8">
+<div class="form-group">
+<div class="form-check prepend-top-0">
+<input name="notification_setting[new_note]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[new_note]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[new_note]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[new_note]">
+<strong>
+New note
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[new_issue]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[new_issue]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[new_issue]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[new_issue]">
+<strong>
+New issue
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[reopen_issue]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[reopen_issue]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[reopen_issue]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[reopen_issue]">
+<strong>
+Reopen issue
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[close_issue]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[close_issue]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[close_issue]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[close_issue]">
+<strong>
+Close issue
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[reassign_issue]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[reassign_issue]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[reassign_issue]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[reassign_issue]">
+<strong>
+Reassign issue
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[issue_due]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[issue_due]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[issue_due]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[issue_due]">
+<strong>
+Issue due
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[new_merge_request]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[new_merge_request]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[new_merge_request]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[new_merge_request]">
+<strong>
+New merge request
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[push_to_merge_request]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[push_to_merge_request]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[push_to_merge_request]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[push_to_merge_request]">
+<strong>
+Push to merge request
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[reopen_merge_request]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[reopen_merge_request]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[reopen_merge_request]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[reopen_merge_request]">
+<strong>
+Reopen merge request
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[close_merge_request]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[close_merge_request]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[close_merge_request]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[close_merge_request]">
+<strong>
+Close merge request
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[reassign_merge_request]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[reassign_merge_request]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[reassign_merge_request]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[reassign_merge_request]">
+<strong>
+Reassign merge request
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[merge_merge_request]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[merge_merge_request]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[merge_merge_request]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[merge_merge_request]">
+<strong>
+Merge merge request
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[failed_pipeline]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[failed_pipeline]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" checked="checked" name="notification_setting[failed_pipeline]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[failed_pipeline]">
+<strong>
+Failed pipeline
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input name="notification_setting[success_pipeline]" type="hidden" value="0"><input id="modal-24-69-Namespace_notification_setting[success_pipeline]" class="js-custom-notification-event form-check-input" type="checkbox" value="1" name="notification_setting[success_pipeline]">
+<label class="form-check-label" for="modal-24-69-Namespace_notification_setting[success_pipeline]">
+<strong>
+Successful pipeline
+<i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin custom-notification-event-loading"></i>
+</strong>
+</label>
+</div>
+</div>
+</div>
+</div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</body></html>
